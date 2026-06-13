@@ -197,39 +197,39 @@ export default function GlowWellnessHub({ onOpenBooking }) {
         </div>
 
         {/* Dashboard Tab Selectors */}
-        <div className="flex justify-center p-1.5 bg-warm-bg rounded-2xl max-w-lg mx-auto mb-12 border border-pink-100/40">
+        <div className="grid grid-cols-3 gap-1 p-1 bg-warm-bg rounded-2xl max-w-md mx-auto mb-10 border border-pink-100/40 w-full">
           <button
             onClick={() => setActiveTab("BREATH")}
-            className={`flex-1 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer transition-all flex items-center justify-center gap-2 ${
+            className={`py-2 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-all flex flex-col sm:flex-row items-center justify-center gap-1 text-center ${
               activeTab === "BREATH" 
                 ? "bg-primary text-white shadow-md" 
                 : "text-text-muted hover:text-primary"
             }`}
           >
-            <Wind className="w-4 h-4" />
-            Breath Flow
+            <Wind className="w-3.5 h-3.5 shrink-0" />
+            <span>Breath Flow</span>
           </button>
           <button
             onClick={() => setActiveTab("HYDRATION")}
-            className={`flex-1 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer transition-all flex items-center justify-center gap-2 ${
+            className={`py-2 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-all flex flex-col sm:flex-row items-center justify-center gap-1 text-center ${
               activeTab === "HYDRATION" 
                 ? "bg-primary text-white shadow-md" 
                 : "text-text-muted hover:text-primary"
             }`}
           >
-            <Droplet className="w-4 h-4" />
-            Hydration
+            <Droplet className="w-3.5 h-3.5 shrink-0" />
+            <span>Hydration</span>
           </button>
           <button
             onClick={() => setActiveTab("WEIGHT")}
-            className={`flex-1 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer transition-all flex items-center justify-center gap-2 ${
+            className={`py-2 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-all flex flex-col sm:flex-row items-center justify-center gap-1 text-center ${
               activeTab === "WEIGHT" 
                 ? "bg-primary text-white shadow-md" 
                 : "text-text-muted hover:text-primary"
             }`}
           >
-            <Scale className="w-4 h-4" />
-            Smart Weight
+            <Scale className="w-3.5 h-3.5 shrink-0" />
+            <span>Smart Weight</span>
           </button>
         </div>
 
