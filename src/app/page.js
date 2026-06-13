@@ -22,6 +22,7 @@ import BreathingTrainer from "./components/BreathingTrainer";
 import BloomingLotus from "./components/BloomingLotus";
 import BookShowcase from "./components/BookShowcase";
 import TickerBanner from "./components/TickerBanner";
+import GlowWellnessHub from "./components/GlowWellnessHub";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -268,6 +269,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Glow Wellness Hub Section */}
+      <GlowWellnessHub onOpenBooking={() => setIsBookingOpen(true)} />
 
       {/* YouTube Shorts Showcase */}
       <section className="max-w-7xl mx-auto px-6 space-y-12">
