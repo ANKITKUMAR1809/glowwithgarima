@@ -21,6 +21,7 @@ import BookingModal from "./components/BookingModal";
 import BreathingTrainer from "./components/BreathingTrainer";
 import BloomingLotus from "./components/BloomingLotus";
 import BookShowcase from "./components/BookShowcase";
+import TickerBanner from "./components/TickerBanner";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -150,42 +151,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet Garima Short Preview */}
-      <section className="max-w-7xl mx-auto px-6">
-        <div className="bg-white rounded-[2.5rem] md:rounded-[3.5rem] border border-pink-100/50 shadow-premium p-6 md:p-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 relative w-full aspect-[4/5] md:aspect-square lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-lg border border-pink-100/30">
-              <Image
-                src="/aboutUsImage.avif"
-                alt="Garima Tiwari"
-                fill
-                sizes="(max-w-768px) 100vw, 400px"
-                className="object-cover"
-              />
-            </div>
-            <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">Your Mentor</span>
-              <h2 className="font-display font-extrabold text-3xl text-primary leading-snug">Meet Garima Tiwari</h2>
-              <p className="text-sm font-bold text-secondary uppercase tracking-wide">Founder of Glow with Garima</p>
-              <p className="text-text-muted leading-relaxed font-semibold">
-                From rock bottom to radiant health—Garima reversed a 30-year history of chronic thyroid disorder, overcame low metabolism, and lost 20 kg. As a Certified Holistic Coach and Fat Loss specialist, she has empowered hundreds of women to conquer weight blocks and balance their hormones naturally.
-              </p>
-              <div className="pt-2">
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline"
-                >
-                  Read My Full Story
-                  <ArrowRight className="w-4 h-4 text-primary" />
-                </Link>
+      {/* Mentor and Book Group */}
+      <div className="space-y-16">
+        {/* Meet Garima Short Preview */}
+        <section className="max-w-7xl mx-auto px-6">
+          <div className="bg-white rounded-[2.5rem] md:rounded-[3.5rem] border border-pink-100/50 shadow-premium p-6 md:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-5 relative w-full aspect-[4/5] md:aspect-square lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-lg border border-pink-100/30">
+                <Image
+                  src="/aboutUsImage.avif"
+                  alt="Garima Tiwari"
+                  fill
+                  sizes="(max-w-768px) 100vw, 400px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="lg:col-span-7 space-y-6">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">Your Mentor</span>
+                <h2 className="font-display font-extrabold text-3xl text-primary leading-snug">Meet Garima Tiwari</h2>
+                <p className="text-sm font-bold text-secondary uppercase tracking-wide">Founder of Glow with Garima</p>
+                <p className="text-text-muted leading-relaxed font-semibold">
+                  From rock bottom to radiant health—Garima reversed a 30-year history of chronic thyroid disorder, overcame low metabolism, and lost 20 kg. As a Certified Holistic Coach and Fat Loss specialist, she has empowered hundreds of women to conquer weight blocks and balance their hormones naturally.
+                </p>
+                <div className="pt-2">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:underline"
+                  >
+                    Read My Full Story
+                    <ArrowRight className="w-4 h-4 text-primary" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Featured Book Section */}
-      <BookShowcase />
+        {/* Slanted Ticker Banner */}
+        <TickerBanner />
+
+        {/* Featured Book Section */}
+        <BookShowcase />
+      </div>
 
       {/* 7 Pillars Short Preview */}
       <section className="max-w-7xl mx-auto px-6 space-y-16">
