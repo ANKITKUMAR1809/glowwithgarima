@@ -15,7 +15,7 @@ export default function TestimonialsPage() {
       location: "Delhi, India",
       condition: "30-Year Chronic Thyroid & Constipation",
       result: "Thyroid Symptoms Reversed & Healed Childhood Constipation",
-      details: "Vinay had struggled with severe childhood constipation and a 30-year history of slow thyroid. Despite taking heavy medication, her energy was extremely low, and she faced chronic brain fog and emotional blockages. Under Garima's direct supervision, she adjusted her diet to focus on digestive enzymes, natural whole foods, and thyroid-boosting minerals, while incorporating daily meditations. Within months, her thyroid markers stabilized, her constipation cleared completely, and she gained immense emotional and physical strength.",
+      details: "Vinay had struggled with severe childhood constipation and a 30-year history of slow thyroid. Despite taking heavy medication, her energy was extremely low, and she faced chronic brain fog and emotional blockages. Under Garima's direct supervision and following the signature 7 Pillar Strategy, she adjusted her diet to focus on digestive enzymes, natural whole foods, and thyroid-boosting minerals, while incorporating daily meditations. Within months, her thyroid markers stabilized, her constipation cleared completely, and she gained immense emotional and physical strength.",
       avatar: "V",
       avatarBg: "bg-primary text-white"
     },
@@ -24,7 +24,7 @@ export default function TestimonialsPage() {
       location: "Working Mother",
       condition: "Post-Pregnancy Weight & Sedentary Routine",
       result: "11 kg Lost Naturally & Core Strength Restored",
-      details: "As a working mother with long sit-down hours and a demanding job, Shruti found it impossible to attend gyms or cook complex meals. She struggled with post-pregnancy fat retention, backaches, and low stamina. Garima designed a home-workout and organic nutrition plan that fit into her tight schedule. Focusing on restorative yoga, progressive fat loss nutrition, and breathing techniques, Shruti dropped 11 kg of stubborn weight, regained core flexibility, and found mental calmness.",
+      details: "As a working mother with long sit-down hours and a demanding job, Shruti found it impossible to attend gyms or cook complex meals. She struggled with post-pregnancy fat retention, backaches, and low stamina. She committed to the 7 Pillar Strategy with a customized home-workout and organic nutrition plan designed for her tight schedule. Focusing on restorative yoga, progressive fat loss nutrition, and breathing techniques, Shruti dropped 11 kg of stubborn weight, regained core flexibility, and found mental calmness.",
       avatar: "S",
       avatarBg: "bg-secondary text-white"
     },
@@ -33,7 +33,7 @@ export default function TestimonialsPage() {
       location: "Beautician, Age 43",
       condition: "Menopause Swelling & Loose Skin",
       result: "Menopause Swelling Healed & Toned Facial Contours",
-      details: "At 43, Simran faced sudden menopause symptoms, causing extreme facial swelling, loose skin, wrinkles, and severe fatigue. As a working beautician, she was constantly on her feet but lacked daily energy. Garima structured a hormone-balancing nutritional routine. By modifying her mineral intake and eliminating inflammatory foods, Simran healed her swelling, reduced facial fat, and avoided clinic treatments, feeling younger and highly energized.",
+      details: "At 43, Simran faced sudden menopause symptoms, causing extreme facial swelling, loose skin, wrinkles, and severe fatigue. As a working beautician, she was constantly on her feet but lacked daily energy. Under Garima's guidance, she followed the 7 Pillar Strategy to implement a hormone-balancing nutritional routine. By modifying her mineral intake and eliminating inflammatory foods, Simran healed her swelling, reduced facial fat, and avoided clinic treatments, feeling younger and highly energized.",
       avatar: "S",
       avatarBg: "bg-accent text-white"
     },
@@ -42,7 +42,7 @@ export default function TestimonialsPage() {
       location: "Student/Professional",
       condition: "PCOD, Irregular Cycles & Gut Inflammation",
       result: "Regular Menstrual Cycles within 3 Months",
-      details: "Nikita joined in August 2024 with irregular periods, hormonal acne, stress, and severe bloating caused by PCOD. She had tried multiple medications, but none provided lasting results. Garima's plan replaced medicines with targeted yoga poses, gut-cleansing nutrition, and hormone-stabilizing supplements. In three months, her cycles regularized naturally without synthetic drugs, and she achieved consistent gut wellness.",
+      details: "Nikita joined in August 2024 with irregular periods, hormonal acne, stress, and severe bloating caused by PCOD. She had tried multiple medications, but none provided lasting results. By adopting the 7 Pillar Strategy, she replaced medicines with targeted yoga poses, gut-cleansing nutrition, and hormone-stabilizing supplements. In three months, her cycles regularized naturally without synthetic drugs, and she achieved consistent gut wellness.",
       avatar: "N",
       avatarBg: "bg-primary-dark text-white"
     }
@@ -86,7 +86,7 @@ export default function TestimonialsPage() {
             Verified Success Stories
           </h1>
           <p className="text-text-muted text-sm sm:text-base leading-relaxed font-semibold">
-            Read detailed diaries of real women who reversed chronic health markers and lost weight using natural nutrition and holistic yoga.
+            Read detailed diaries of our 1100+ clients across the globe who, backed by over 5+ years of coaching experience, reversed chronic conditions and lost weight by following our signature 7 Pillar Strategy.
           </p>
         </div>
 
@@ -175,13 +175,18 @@ export default function TestimonialsPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-1 text-accent-gold pt-4 border-t border-zinc-100/50">
-                  <Star className="w-4 h-4 fill-current" />
-                  <Star className="w-4 h-4 fill-current" />
-                  <Star className="w-4 h-4 fill-current" />
-                  <Star className="w-4 h-4 fill-current" />
-                  <Star className="w-4 h-4 fill-current" />
-                  <span className="text-[10px] font-bold text-text-muted pl-2 uppercase tracking-wide">100% Organic Guide</span>
+                <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-zinc-100/50">
+                  <div className="flex items-center gap-1 text-accent-gold">
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                    <Star className="w-4 h-4 fill-current" />
+                    <span className="text-[10px] font-bold text-text-muted pl-2 uppercase tracking-wide">100% Organic Guide</span>
+                  </div>
+                  <span className="text-[10px] font-bold text-primary px-2.5 py-1 bg-pink-50 rounded-full uppercase tracking-wider">
+                    7 Pillar Strategy Followed
+                  </span>
                 </div>
               </motion.div>
             ))}

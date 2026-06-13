@@ -14,35 +14,35 @@ export default function Testimonials() {
     {
       name: "Vinay Panwar",
       location: "Delhi",
-      achievement: "Reversed 30-Year Thyroid & Healed Constipation",
+      achievement: "Reversed 30-Year Thyroid & Constipation (7 Pillar Strategy)",
       quote: "एक बेहतरीन फिटनेस कोच जो ना सिर्फ शारीरिक अपितु मानसिक स्वास्थ्य पर भी पूरा ध्यान देती है! खाने की अच्छी आदतों का निर्माण करना उनके लिए अहम है! बहुत लोगों को जानती हूं जिन्हे गरिमा ने ठीक किया है लेकिन अभी सिर्फ अपनी बात करूंगी. बचपन की कब्ज को ठीक किया है गरिमा की देखरेख में ! थायरायड को ठीक किया जो तीस साल पुराना था! इमोशनली मजबूत हुई हूं ! शरीर का मजबूत होना तो लाजमी था ही! एक बार जुड़कर देखिए आप खुद जान जाएंगे !",
       avatarBg: "bg-emerald-900 text-white"
     },
     {
       name: "Shruti Solanki",
       location: "Home Workout & Fat Loss",
-      achievement: "Post-pregnancy Health & 11kg Loss",
+      achievement: "Post-pregnancy Health & 11kg Loss (7 Pillar Strategy)",
       quote: "I cannot thank my fitness coach enough for the incredible support and guidance she has provided me on my post-pregnancy fitness journey. With a demanding job involving long hours of sitting, she crafted a customized plan that fit perfectly into my schedule, focusing on healthy fat loss, flexibility, and strength. Her approach is holistic, incorporating meditation which transformed my mental well-being. I highly recommend her!",
       avatarBg: "bg-orange-500 text-white"
     },
     {
       name: "Simran Vaswani",
       location: "Beautician, Age 43",
-      achievement: "Menopause Swelling Healed & Facial Fat Reduction",
+      achievement: "Menopause Swelling Healed (7 Pillar Strategy)",
       quote: "डियर गरिमा मैम, मेरी स्किन लूज़ हो रही थी, रिंकल्स भी थे और फेस फैट भी बहुत था। लेकिन अब आपकी डाइट लेने से सब सही हो रहा है और recently menopause के symptoms से मेरे फेस में स्वेलिंग हो गई थी और वो भी ठीक होगया है। मैं एक वर्किंग women हु लेकिन फिर भी इनर्जाइज्ड फील करती हु at the age of 43 or मैं डॉक्टर के पास जाने से बच गई।। Thank you so much❤️",
       avatarBg: "bg-teal-600 text-white"
     },
     {
       name: "Nikita Dixit",
       location: "Active Client",
-      achievement: "Regularized PCOD & Hormones naturally",
+      achievement: "Regularized PCOD & Hormones naturally (7 Pillar Strategy)",
       quote: "I joined in August 2024. I was unsure about consistency and had hormonal issues related to PCOD, stress, and gut health. After three months of following the diet and exercise program, my periods became regular and timely! Earlier, I tried medication but it did not work effectively. Through this journey, I realized the value of Yoga, mindful nutrition, and health.",
       avatarBg: "bg-amber-600 text-white"
     },
     {
       name: "Jyoti Sareen",
       location: "Transformation Client",
-      achievement: "Mindset Shift & Consistent Fat Loss",
+      achievement: "Mindset Shift & Consistent Fat Loss (7 Pillar Strategy)",
       quote: "I am incredibly grateful to Garima Ma’am for their unwavering support and guidance throughout my fat loss journey. Their personalized approach, consistent motivation, and expert advice played a crucial role in helping me achieve my goals. The tailored workout plans, nutritional tips, and positive encouragement kept me focused and inspired.",
       avatarBg: "bg-emerald-700 text-white"
     }

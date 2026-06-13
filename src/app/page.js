@@ -74,7 +74,7 @@ export default function Home() {
             <div className="grid grid-cols-3 gap-6 pt-6 border-t border-pink-100/60 max-w-md">
               <div>
                 <span className="font-display font-extrabold text-2xl md:text-3xl text-primary block">1100+</span>
-                <span className="text-xs text-text-muted font-bold">Happy Clients</span>
+                <span className="text-xs text-text-muted font-bold">Clients Across Globe</span>
               </div>
               <div>
                 <span className="font-display font-extrabold text-2xl md:text-3xl text-secondary block">4000+</span>
@@ -82,7 +82,7 @@ export default function Home() {
               </div>
               <div>
                 <span className="font-display font-extrabold text-2xl md:text-3xl text-accent block">5+</span>
-                <span className="text-xs text-text-muted font-bold">Years Exp.</span>
+                <span className="text-xs text-text-muted font-bold">Years Experience</span>
               </div>
             </div>
           </motion.div>
