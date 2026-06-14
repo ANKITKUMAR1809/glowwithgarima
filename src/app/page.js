@@ -13,7 +13,8 @@ import {
   TrendingUp,
   Bookmark,
   Award,
-  BookOpen
+  BookOpen,
+  X
 } from "lucide-react";
 
 // Components
@@ -23,12 +24,16 @@ import BloomingLotus from "./components/BloomingLotus";
 import BookShowcase from "./components/BookShowcase";
 import TickerBanner from "./components/TickerBanner";
 import GlowWellnessHub from "./components/GlowWellnessHub";
+import PillarWheel from "./components/PillarWheel";
+import FloatingSvgAnimation from "./components/FloatingSvgAnimation";
 
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState(null);
 
   return (
-    <div className="space-y-32 pb-32 bg-grid-pattern glow-mesh">
+    <div className="space-y-32 pb-32 bg-grid-pattern glow-mesh relative overflow-hidden">
+      <FloatingSvgAnimation />
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-12 pb-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -134,7 +139,7 @@ export default function Home() {
               </div>
               <div>
                 <span className="text-xs font-extrabold text-primary block">Empowering Women</span>
-                <span className="text-[10px] text-text-muted font-semibold">100+ Life Changes</span>
+                <span className="text-[10px] text-text-muted font-semibold">1100+ Life Changes</span>
               </div>
             </div>
 
@@ -144,7 +149,7 @@ export default function Home() {
                 <Star className="w-4 h-4 fill-current" />
               </div>
               <div>
-                <span className="text-xs font-extrabold text-[#251A20] block">Thyroid Reversal</span>
+                <span className="text-xs font-extrabold text-[#251A20] block">Complete Transformation</span>
                 <span className="text-[10px] text-text-muted font-semibold">Natural Approach</span>
               </div>
             </div>
@@ -205,23 +210,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="p-8 bg-white border border-pink-100/50 rounded-3xl shadow-sm hover:shadow-premium transition-shadow duration-300 space-y-4 relative overflow-hidden group">
-            <div className="w-12 h-12 rounded-2xl bg-pink-50 text-primary flex items-center justify-center font-bold text-lg group-hover:bg-primary group-hover:text-white transition-colors duration-300">1</div>
-            <h3 className="font-display font-bold text-lg text-primary">Sustainable Nutrition</h3>
-            <p className="text-xs text-text-muted leading-relaxed font-semibold">Enjoy satisfying home food that supports your biology. No starvation or skipping meals.</p>
-          </div>
-          <div className="p-8 bg-white border border-pink-100/50 rounded-3xl shadow-sm hover:shadow-premium transition-shadow duration-300 space-y-4 relative overflow-hidden group">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-secondary flex items-center justify-center font-bold text-lg group-hover:bg-secondary group-hover:text-white transition-colors duration-300">2</div>
-            <h3 className="font-display font-bold text-lg text-primary">Hormonal Balance</h3>
-            <p className="text-xs text-text-muted leading-relaxed font-semibold">Specifically structured diets and supplement checks to reverse Thyroid, PCOD, and Menstrual delays.</p>
-          </div>
-          <div className="p-8 bg-white border border-pink-100/50 rounded-3xl shadow-sm hover:shadow-premium transition-shadow duration-300 space-y-4 relative overflow-hidden group">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-accent flex items-center justify-center font-bold text-lg group-hover:bg-accent group-hover:text-white transition-colors duration-300">3</div>
-            <h3 className="font-display font-bold text-lg text-primary">Restorative Wellness</h3>
-            <p className="text-xs text-text-muted leading-relaxed font-semibold">Ancient Yog Nidra techniques and guided breathwork to target cortisol levels and ease stress.</p>
-          </div>
-        </div>
+        <PillarWheel />
 
         <div className="text-center">
           <Link
@@ -234,44 +223,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick transformations teaser */}
-      <section className="bg-gradient-to-r from-pink-500/5 via-secondary/5 to-transparent py-20 border-y border-pink-100/30">
-        <div className="max-w-7xl mx-auto px-6 text-center space-y-16">
-          <div className="max-w-2xl mx-auto space-y-4">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary">Incredible Transformations</span>
-            <h2 className="font-display font-extrabold text-3xl md:text-4xl text-primary">Real Results from Real Women</h2>
-            <p className="text-text-muted text-sm font-semibold">See before and after case histories of women who regained their confidence.</p>
-          </div>
+      {/* Real Results — Scrolling Transformation Gallery */}
+      <section className="py-20 border-y border-pink-100/30 relative overflow-hidden">
+        {/* Decorative SVG background with animated rotating mandalas */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.05]" viewBox="0 0 1200 500">
+          <defs>
+            <radialGradient id="grad-rose" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#FB7185" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#FB7185" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="grad-gold" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#FBC02D" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#FBC02D" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          
+          {/* Pulsing glow spots */}
+          <circle cx="200" cy="250" r="250" fill="url(#grad-rose)" />
+          <circle cx="1000" cy="250" r="250" fill="url(#grad-gold)" />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-premium border border-white hover:scale-103 transition-transform duration-300">
-              <Image src="/portfolio/p1.avif" fill sizes="200px" alt="Client 1" className="object-cover" />
-            </div>
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-premium border border-white hover:scale-103 transition-transform duration-300">
-              <Image src="/portfolio/p2.avif" fill sizes="200px" alt="Client 2" className="object-cover" />
-            </div>
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-premium border border-white hover:scale-103 transition-transform duration-300">
-              <Image src="/portfolio/p3.avif" fill sizes="200px" alt="Client 3" className="object-cover" />
-            </div>
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-premium border border-white hover:scale-103 transition-transform duration-300">
-              <Image src="/portfolio/p4.avif" fill sizes="200px" alt="Client 4" className="object-cover" />
+          {/* Slow-spinning Sacred Geometry / Mandala SVG on Left */}
+          <g className="animate-spin-slow origin-[200px_250px]">
+            <circle cx="200" cy="250" r="120" stroke="#D63384" strokeWidth="1" strokeDasharray="6 6" fill="none" />
+            <circle cx="200" cy="250" r="90" stroke="#00A8E8" strokeWidth="1.5" strokeDasharray="3 9" fill="none" />
+            <circle cx="200" cy="250" r="60" stroke="#75B043" strokeWidth="1" strokeDasharray="15 5" fill="none" />
+            <path d="M200,130 A120,120 0 0,1 200,370 A120,120 0 0,1 200,130" stroke="#D63384" strokeWidth="0.8" fill="none" />
+            <path d="M200,130 A120,120 0 0,1 200,370 A120,120 0 0,1 200,130" stroke="#D63384" strokeWidth="0.8" fill="none" transform="rotate(30 200 250)" />
+            <path d="M200,130 A120,120 0 0,1 200,370 A120,120 0 0,1 200,130" stroke="#D63384" strokeWidth="0.8" fill="none" transform="rotate(60 200 250)" />
+            <path d="M200,130 A120,120 0 0,1 200,370 A120,120 0 0,1 200,130" stroke="#D63384" strokeWidth="0.8" fill="none" transform="rotate(90 200 250)" />
+            <path d="M200,130 A120,120 0 0,1 200,370 A120,120 0 0,1 200,130" stroke="#D63384" strokeWidth="0.8" fill="none" transform="rotate(120 200 250)" />
+            <path d="M200,130 A120,120 0 0,1 200,370 A120,120 0 0,1 200,130" stroke="#D63384" strokeWidth="0.8" fill="none" transform="rotate(150 200 250)" />
+          </g>
+
+          {/* Slow-spinning Sacred Geometry / Mandala SVG on Right (Reverse Spin) */}
+          <g className="animate-spin-slow-reverse origin-[1000px_250px]">
+            <circle cx="1000" cy="250" r="140" stroke="#00A8E8" strokeWidth="1" strokeDasharray="8 6" fill="none" />
+            <circle cx="1000" cy="250" r="100" stroke="#D63384" strokeWidth="1" strokeDasharray="4 8" fill="none" />
+            <circle cx="1000" cy="250" r="70" stroke="#FBC02D" strokeWidth="1.2" strokeDasharray="12 4" fill="none" />
+            <path d="M1000,110 A140,140 0 0,1 1000,390 A140,140 0 0,1 1000,110" stroke="#00A8E8" strokeWidth="0.8" fill="none" />
+            <path d="M1000,110 A140,140 0 0,1 1000,390 A140,140 0 0,1 1000,110" stroke="#00A8E8" strokeWidth="0.8" fill="none" transform="rotate(45 1000 250)" />
+            <path d="M1000,110 A140,140 0 0,1 1000,390 A140,140 0 0,1 1000,110" stroke="#00A8E8" strokeWidth="0.8" fill="none" transform="rotate(90 1000 250)" />
+            <path d="M1000,110 A140,140 0 0,1 1000,390 A140,140 0 0,1 1000,110" stroke="#00A8E8" strokeWidth="0.8" fill="none" transform="rotate(135 1000 250)" />
+          </g>
+        </svg>
+
+        <div className="max-w-7xl mx-auto px-6 text-center space-y-12 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-2xl mx-auto space-y-4"
+          >
+            <span className="text-xs font-bold uppercase tracking-widest text-[#E68A65]">Incredible Transformations</span>
+            <h2 className="font-display font-extrabold text-3xl md:text-5xl text-primary">Real Results from Real Women</h2>
+            <p className="text-text-muted text-sm sm:text-base font-semibold max-w-lg mx-auto">See before and after case histories of women who regained their confidence through the 7 Pillars approach.</p>
+          </motion.div>
+
+          {/* Scrolling image marquee — larger images */}
+          <div className="w-full overflow-hidden relative py-8 bg-gradient-to-br from-white/60 to-pink-50/30 backdrop-blur-sm rounded-[2.5rem] shadow-premium border border-pink-100/30">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none rounded-l-[2.5rem]" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none rounded-r-[2.5rem]" />
+
+            <div className="flex gap-7 animate-marquee hover:play-state-paused cursor-pointer">
+              {[...Array(2)].map((_, loopIdx) => (
+                <div key={loopIdx} className="flex gap-7 shrink-0">
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 109].map((num) => (
+                    <div 
+                      key={num}
+                      onClick={() => setLightboxImage(`/portfolio/p${num}.avif`)}
+                      className="relative w-60 md:w-64 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-white shadow-lg flex-shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer group"
+                    >
+                      <Image 
+                        src={`/portfolio/p${num}.avif`} 
+                        fill 
+                        sizes="260px" 
+                        alt={`Transformation Result ${num}`} 
+                        className="object-cover group-hover:brightness-110 transition-all duration-300" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
 
           <div>
             <Link
               href="/gallery"
-              className="px-6 py-3.5 bg-secondary hover:bg-blue-600 text-white rounded-xl font-bold text-xs uppercase tracking-wider inline-flex items-center gap-2 hover:-translate-y-0.5 transition-all cursor-pointer shadow-md shadow-blue-500/10"
+              className="px-8 py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-bold text-xs uppercase tracking-widest inline-flex items-center gap-2 hover:-translate-y-0.5 transition-all cursor-pointer shadow-premium hover:shadow-premium-hover"
             >
-              View All Transformations
+              View More Transformations
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Glow Wellness Hub Section */}
-      <GlowWellnessHub onOpenBooking={() => setIsBookingOpen(true)} />
+      {/* Glow Wellness Hub Section with Scroll Anchor ID */}
+      <div id="wellness-dashboard" className="scroll-mt-24">
+        <GlowWellnessHub onOpenBooking={() => setIsBookingOpen(true)} />
+      </div>
+
+
 
       {/* YouTube Shorts Showcase */}
       <section className="max-w-7xl mx-auto px-6 space-y-12">
@@ -318,8 +373,81 @@ export default function Home() {
       </section>
 
       {/* Breathing Trainer game instead of pre-booking banner */}
-      <section className="py-8">
+      <section className="py-8 space-y-12">
         <BreathingTrainer onBookConsultation={() => setIsBookingOpen(true)} />
+
+        {/* Scrolling text reviews — Healing Feedback */}
+        <div className="max-w-7xl mx-auto space-y-8 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center space-y-3"
+          >
+            <span className="text-sm font-extrabold uppercase tracking-widest text-[#E68A65]">✨ Healing Feedback</span>
+            <h2 className="font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-primary">What Our Clients Say</h2>
+            <p className="text-base text-text-muted font-semibold max-w-xl mx-auto">Hear directly from women whose lives transformed through the 7 Pillars approach.</p>
+          </motion.div>
+          
+          <div className="w-full overflow-hidden relative py-8 bg-gradient-to-br from-white via-pink-50/20 to-white border border-pink-100/40 rounded-[2.5rem] shadow-premium">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none rounded-l-[2.5rem]" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none rounded-r-[2.5rem]" />
+
+            <div className="flex gap-8 animate-marquee-slow hover:play-state-paused cursor-pointer">
+              {[...Array(2)].map((_, loopIdx) => (
+                <div key={loopIdx} className="flex gap-8 shrink-0">
+                  {[
+                    { name: "Ankita Dixit", location: "Delhi", text: "Change in body composition, significant fat loss, gut inflammation dropped, healed knee joint pain naturally. The 7 Pillar approach changed my life!", tag: "Fat Loss & Joint Healing" },
+                    { name: "Rubi Singh", location: "Mumbai", text: "Severe skin inflammation healed completely through organic lifestyle adjustments and hormone balancing diet. I feel 10 years younger!", tag: "Skin & Hormone Balance" },
+                    { name: "Jyoti Sareen", location: "Jaipur", text: "Transformative fat loss journey. Garima Ma'am helped change not just my weight, but my entire mindset. Lost 14 kg sustainably.", tag: "Mindset Transformation" },
+                    { name: "Vinay Panwar", location: "Delhi", text: "Thyroid markers stabilized, childhood constipation cleared completely, and gained immense emotional and physical strength after 30 years.", tag: "Thyroid & Constipation" },
+                    { name: "Shruti Solanki", location: "Pune", text: "Dropped 11 kg of stubborn weight, regained core flexibility, and found mental calmness with the 7 Pillars. Best decision ever!", tag: "Weight Loss & Flexibility" },
+                    { name: "Simran Vaswani", location: "Bangalore", text: "Healed severe menopause facial swelling, reduced facial fat, and avoided clinic treatments, feeling younger and highly energized.", tag: "Menopause Healing" },
+                    { name: "Nikita Dixit", location: "Lucknow", text: "PCOD cycles regularized naturally without synthetic drugs, regular periods within 3 months, and achieved consistent gut wellness.", tag: "PCOD Recovery" }
+                  ].map((review, idx) => (
+                    <div 
+                      key={idx} 
+                      className="w-[420px] bg-white p-8 rounded-[1.5rem] border border-pink-100/40 shadow-md flex flex-col justify-between shrink-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+                    >
+                      {/* Decorative quote SVG */}
+                      <svg className="absolute top-4 left-6 w-10 h-10 opacity-[0.06] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                      </svg>
+
+                      {/* Tag badge */}
+                      <div className="mb-4">
+                        <span className="text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-pink-50 text-primary border border-pink-100/50">
+                          {review.tag}
+                        </span>
+                      </div>
+
+                      <p className="text-base text-text-muted italic leading-relaxed font-semibold flex-1">
+                        &ldquo;{review.text}&rdquo;
+                      </p>
+
+                      <div className="flex items-center gap-3 mt-6 pt-5 border-t border-pink-50">
+                        {/* Avatar circle */}
+                        <div className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-extrabold text-sm shadow-md">
+                          {review.name.charAt(0)}
+                        </div>
+                        <div className="flex-1">
+                          <span className="text-sm font-bold text-text-main block">{review.name}</span>
+                          <span className="text-xs text-text-muted font-semibold">{review.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-amber-400">
+                          {[...Array(5)].map((_, starIdx) => (
+                            <Star key={starIdx} className="w-4 h-4 fill-current" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Booking Modal */}
@@ -327,6 +455,37 @@ export default function Home() {
         isOpen={isBookingOpen} 
         onClose={() => setIsBookingOpen(false)} 
       />
+
+      {/* Image Lightbox Modal */}
+      {lightboxImage && (
+        <div 
+          className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setLightboxImage(null)}
+        >
+          <button 
+            onClick={() => setLightboxImage(null)}
+            className="absolute top-6 right-6 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            transition={{ duration: 0.25 }}
+            className="relative w-full max-w-lg max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={lightboxImage}
+              width={600}
+              height={800}
+              alt="Enlarged transformation result"
+              className="w-full h-auto object-contain rounded-3xl"
+            />
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 }

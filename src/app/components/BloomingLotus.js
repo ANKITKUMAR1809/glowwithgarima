@@ -188,13 +188,13 @@ export default function BloomingLotus() {
           }}
           initial={{ opacity: 0, scale: 0.2 }}
           animate={{
-            y: [-10, -60 - Math.random() * 30],
-            x: [0, (Math.random() - 0.5) * 20],
+            y: [-10, -60 - ((i * 7) % 30)],
+            x: [0, ((i * 13) % 20) - 10],
             opacity: [0, 0.9, 0],
             scale: [0.3, 1, 0.3],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: 3 + ((i * 11) % 3) * 0.7,
             repeat: Infinity,
             delay: i * 0.4,
             ease: "easeInOut",

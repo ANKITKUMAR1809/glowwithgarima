@@ -146,7 +146,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
       {/* Title block */}
       <div className="text-center space-y-3 z-10 relative">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 text-primary text-[10px] font-extrabold uppercase tracking-wide">
-          <Sparkles className="w-3.5 h-3.5" /> Garima's Calming Zone
+          <Sparkles className="w-3.5 h-3.5" /> Garima&apos;s Calming Zone
         </div>
         <h3 className="font-display font-extrabold text-2xl md:text-3xl text-primary">
           Mindful Box Breathing Game
@@ -180,7 +180,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
                 onClick={onBookConsultation}
                 className="px-6 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer shadow transition-all flex items-center gap-1.5 mx-auto"
               >
-                Let's plan your health goals
+                Let&apos;s plan your health goals
                 <ArrowRight className="w-4 h-4" />
               </button>
             </motion.div>

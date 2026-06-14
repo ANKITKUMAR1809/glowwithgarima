@@ -14,9 +14,10 @@ export default function Gallery() {
     { id: "all", label: "All Stories" },
     { id: "thyroid", label: "Thyroid Recovery" },
     { id: "pcod", label: "PCOD & PCOS" },
-    { id: "weight", label: "Weight & Fat Loss" }
+    { id: "weight", label: "Weight & Fat Loss" },
+    { id: "faceyoga", label: "Face Yoga" }
   ];
-
+ 
   const portfolioImages = [
     { src: "/portfolio/p1.avif", title: "Thyroid & Fat Loss Recovery", desc: "Reversing chronic thyroid weight blocks, lost 15kg naturally with home food.", category: "thyroid" },
     { src: "/portfolio/p2.avif", title: "Hormonal Reset & Waist Definition", desc: "Balanced estrogen/progesterone levels, significant drop in visceral fat.", category: "pcod" },
@@ -26,8 +27,8 @@ export default function Gallery() {
     { src: "/portfolio/p6.avif", title: "Shruti Solanki's Post-Pregnancy Lose", desc: "Dropped 11 kgs of stubborn pregnancy weight, improved core strength.", category: "weight" },
     { src: "/portfolio/p7.avif", title: "Ankita Dixit's Gut & Pain Healing", desc: "Drastic drop in skin inflammation, joint pains, and improved digestion.", category: "weight" },
     { src: "/portfolio/p8.avif", title: "PCOD Cycle Regularization", desc: "Natural cycle regulation within 3 months, hormone marks balanced.", category: "pcod" },
-    { src: "/portfolio/p9.avif", title: "Skin Glow & Internal Healing", desc: "Reversed chronic facial swelling, resolved wrinkles, high energy.", category: "thyroid" },
-    { src: "/portfolio/p109.avif", title: "Simran Vaswani Menopause Recovery", desc: "Age 43 working woman, resolved menopause facial swelling and skin issues.", category: "thyroid" }
+    { src: "/portfolio/p9.avif", title: "Skin Glow & Internal Healing", desc: "Reversed chronic facial swelling, resolved wrinkles, high energy.", category: "faceyoga" },
+    { src: "/portfolio/p109.avif", title: "Simran Vaswani Menopause Recovery", desc: "Age 43 working woman, resolved menopause facial swelling and skin issues.", category: "faceyoga" }
   ];
 
   const filteredImages = activeCategory === "all" 

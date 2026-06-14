@@ -28,7 +28,7 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About Me", href: "/about" },
     { name: "7 Pillars", href: "/pillars" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "Testimonials", href: "/gallery" },
     { name: "Programs", href: "/offerings" },
     { name: "Reviews", href: "/testimonials" },
   ];

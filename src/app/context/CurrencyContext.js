@@ -15,6 +15,8 @@ const priceMaps = {
   "yoga-hybrid-group-1": { INR: "₹7,777", USD: "$99" },
   "yoga-hybrid-group-2": { INR: "₹999", USD: "$12.99" },
   "yoga-hybrid-group-3": { INR: "₹10,000", USD: "$129" },
+  "yoga-hybrid-group-3days": { INR: "₹1,999", USD: "$29" },
+  "yoga-hybrid-group-5days": { INR: "₹2,999", USD: "$39" },
   
   // Online Hybrid Sessions
   "hybrid-sessions-1": { INR: "₹3,000", USD: "$39" },
@@ -30,6 +32,9 @@ const priceMaps = {
   "meal-plan-1": { INR: "₹6,000", USD: "$79" },
   "meal-plan-3": { INR: "₹15,555", USD: "$189" },
   "meal-plan-installment": { INR: "₹18,000", USD: "$219" },
+  "meal-plan-silver": { INR: "₹9,000", USD: "$119" },
+  "meal-plan-gold": { INR: "₹15,000", USD: "$189" },
+  "meal-plan-platinum": { INR: "₹18,000", USD: "$229" },
   
   // Complete Hair Solution
   "hair-solution": { INR: "₹2,999", USD: "$39" }
@@ -44,6 +49,9 @@ const actualPriceMaps = {
   "hybrid-sessions-6": { INR: "₹12,000", USD: "$159" },
   "meal-plan-3": { INR: "₹18,000", USD: "$239" },
   "meal-plan-installment": { INR: "₹18,000", USD: "$239" },
+  "meal-plan-silver": { INR: "₹12,000", USD: "$159" },
+  "meal-plan-gold": { INR: "₹20,000", USD: "$249" },
+  "meal-plan-platinum": { INR: "₹24,000", USD: "$299" },
   "merchandise-book": { INR: "₹999", USD: "$12.99" }
 };
 
@@ -53,7 +61,9 @@ export function CurrencyProvider({ children }) {
   useEffect(() => {
     const saved = localStorage.getItem("gwg-currency");
     if (saved === "USD" || saved === "INR") {
-      setCurrencyState(saved);
+      Promise.resolve().then(() => {
+        setCurrencyState(saved);
+      });
     }
   }, []);
 

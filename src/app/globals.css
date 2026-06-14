@@ -94,3 +94,53 @@ body {
     linear-gradient(to right, rgba(214, 51, 132, 0.015) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(214, 51, 132, 0.015) 1px, transparent 1px);
 }
+
+/* Infinite horizontal scrolling marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee 50s linear infinite;
+}
+
+.play-state-paused {
+  animation-play-state: paused;
+}
+
+.hover\:play-state-paused:hover {
+  animation-play-state: paused;
+}
+
+/* Slow spin animations for SVG elements */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 50s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 60s linear infinite;
+}
+

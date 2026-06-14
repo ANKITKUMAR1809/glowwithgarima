@@ -9,45 +9,45 @@ export default function Pillars() {
   const detailedPillars = [
     {
       num: "01",
-      title: "Sustainable Nutrition",
+      title: "Nutrition",
       tagline: "Nourishing Your Cells, Not Starving Them",
       details: "Crash diets shut down your thyroid and trigger starvation responses. We build custom nutritional guides centered on standard, home-cooked food. No hard-to-find ingredients, no calorie-counting anxiety. You will learn to eat foods that support metabolic energy, thyroid recovery, and stable blood sugar."
     },
     {
       num: "02",
-      title: "Female Fat Loss Science",
-      tagline: "Fat Loss vs. Scale Weight Loss",
-      details: "Losing water and muscle mass destroys your metabolism, causing you to rebound. Our approach focuses specifically on subcutaneous and visceral fat reduction while maintaining muscle tone. This body composition shift ensures you look defined, feel strong, and maintain your results forever."
+      title: "Physical Activity",
+      tagline: "Active Living Tailored to Your Biology",
+      details: "You do not need to spend hours at the gym. We design home-friendly exercise and yoga routines that suit your current strength and energy levels. The focus is on progressive movement, strength, and consistency without exhausting your body."
     },
     {
       num: "03",
-      title: "Hormonal Balancing",
-      tagline: "Unlocking Your Stuck Metabolism",
-      details: "If you have a slow thyroid or insulin resistance (PCOD/PCOS), standard deficits won't work. We align your nutritional timing and food choices to reduce inflammation, balance progesterone and estrogen, and boost thyroid conversion (T4 to active T3) naturally."
+      title: "Recovery & Rest",
+      tagline: "Deep Sleep & Cellular Healing",
+      details: "Sleep is when your body repairs and resets its metabolic functions. We utilize circadian rhythm alignment and restorative practices like Yog Nidra to induce deep, high-quality recovery. This balances hunger hormones and boosts daily energy levels."
     },
     {
       num: "04",
-      title: "Guided Meditation",
+      title: "Stress Management",
       tagline: "Soothing the Cortisol Switch",
-      details: "Cortisol (the stress hormone) is a primary trigger for abdominal fat storage and sleep disruptions. We incorporate gentle, guided breathing exercises and meditations into your routine. By calming the sympathetic nervous system, we clear the biological blocks to fat loss."
+      details: "Cortisol (the stress hormone) is a primary trigger for abdominal fat storage and sleep disruptions. We incorporate gentle, guided breathing exercises, meditations, and nervous system regulation to clear biological blocks to weight loss and healing."
     },
     {
       num: "05",
-      title: "Yog Nidra & Deep Recovery",
-      tagline: "Cellular Healing through Sleep",
-      details: "Sleep is when your body repairs and resets its metabolic functions. We utilize Yog Nidra—an ancient practice of conscious deep sleep—to induce deep recovery. This balances hunger hormones (leptin and ghrelin) and boosts daily energy levels."
+      title: "Environment",
+      tagline: "Supporting Your Lifestyle and Spaces",
+      details: "Your external environment directly affects internal health. We address lifestyle stressors, reduce daily endocrine disruptors, and help you structure your physical and social spaces to make healthy choices effortless and sustainable."
     },
     {
       num: "06",
-      title: "Customized Movement",
-      tagline: "Exercise Tailored to Your Biology",
-      details: "You do not need to spend hours at the gym. We design home-friendly exercise and yoga routines that suit your current strength levels and fit into a busy workday. The focus is on consistency and progressive habit building."
+      title: "Gut Health",
+      tagline: "The Core of Hormonal Harmony",
+      details: "A healthy gut is essential for hormonal conversion, nutrient absorption, and immune function. We focus on healing chronic bloating, constipation, and leaky gut using natural digestive enzymes, prebiotic/probiotic foods, and gut-soothing strategies."
     },
     {
       num: "07",
-      title: "1-on-1 Guidance & Habits",
-      tagline: "Your Daily Support Network",
-      details: "Change is hard when done alone. We provide WhatsApp monitoring and custom daily habit checklists. Garima checks in with you directly, tracking your patterns and adjusting the program based on real-time feedback to ensure you remain successful."
+      title: "Habit Transformation",
+      tagline: "Micro-habits for Lifelong Success",
+      details: "True transformation happens through daily consistency, not overnight resets. We break down your goals into easy micro-habits, supported by customized tracking sheets and WhatsApp accountability, to make these changes a permanent part of your identity."
     }
   ];
 

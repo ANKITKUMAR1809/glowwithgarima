@@ -1,58 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Apple, Flame, Activity, Brain, Moon, Sparkles, MessageSquare } from "lucide-react";
+import { Apple, Activity, Moon, Brain, Leaf, Shield, Heart } from "lucide-react";
 
 export default function PillarGrid() {
   const pillars = [
     {
       icon: Apple,
-      title: "Sustainable Nutrition",
-      description: "No crash dieting or severe starvation. Eat nourishing home-cooked food that is satisfying and maintains your energy levels throughout the day.",
+      title: "Nutrition",
+      description: "Nourishing whole foods, balanced macronutrients, and simple home-cooked meals tailored to your biology. No starvation or crash diets.",
       badge: "Healthy Eating",
       color: "from-emerald-50 to-teal-50/20 text-emerald-800 border-emerald-100"
     },
     {
-      icon: Flame,
-      title: "Female Fat Loss Expert",
-      description: "Scientific approach focused on metabolic enhancement, fat loss (not just scale weight), and building lean, toned muscles from home.",
-      badge: "Fat Loss Focus",
+      icon: Activity,
+      title: "Physical Activity",
+      description: "Home-friendly movement, progressive strength training, and active living tailored to boost your metabolic rate safely without exhaustion.",
+      badge: "Movement",
       color: "from-orange-50 to-red-50/20 text-orange-700 border-orange-100"
     },
     {
-      icon: Activity,
-      title: "Hormonal Balancing",
-      description: "Natural, lifestyle-based protocols specifically designed to help reverse thyroid dysfunction, manage PCOD/PCOS, and ease menopause symptoms.",
-      badge: "Hormonal Health",
-      color: "from-purple-50 to-pink-50/20 text-purple-700 border-purple-100"
-    },
-    {
-      icon: Brain,
-      title: "Mindfulness & Meditation",
-      description: "Manage stress hormones (cortisol) which block fat loss. Integrate simple, guided breathing exercises and meditations into daily routine.",
-      badge: "Stress Reduction",
-      color: "from-blue-50 to-indigo-50/20 text-blue-700 border-blue-100"
-    },
-    {
       icon: Moon,
-      title: "Yog Nidra & Sleep",
-      description: "Restorative sleep is key to cellular recovery. Incorporate ancient Yog Nidra practices to induce deep sleep, soothe nerves, and boost recovery.",
-      badge: "Cellular Healing",
+      title: "Recovery & Rest",
+      description: "Prioritizing deep sleep, circadian alignment, and restorative rest (including ancient Yog Nidra) to reset cellular repair and hormone balance.",
+      badge: "Sleep & Reset",
       color: "from-indigo-50 to-violet-50/20 text-indigo-700 border-indigo-100"
     },
     {
-      icon: Sparkles,
-      title: "Sustainable Fitness",
-      description: "Customized workouts tailored to your current fitness level, time availability, and space, designed to fit a busy lifestyle without stress.",
-      badge: "Movement & Strength",
-      color: "from-amber-50 to-orange-50/20 text-amber-800 border-amber-100"
+      icon: Brain,
+      title: "Stress Management",
+      description: "Regulating cortisol levels through conscious breathing, mindfulness, and nervous system regulation to unlock natural fat loss.",
+      badge: "Mindfulness",
+      color: "from-blue-50 to-indigo-50/20 text-blue-700 border-blue-100"
     },
     {
-      icon: MessageSquare,
-      title: "1-on-1 Guidance",
-      description: "Unwavering support, WhatsApp follow-ups, and custom habit-building sheets to keep you accountable, motivated, and successful.",
-      badge: "Unwavering Support",
-      color: "from-emerald-50 to-lime-50/20 text-emerald-700 border-emerald-100"
+      icon: Leaf,
+      title: "Environment",
+      description: "Cultivating a supportive physical and emotional space, reducing daily endocrine disruptors, and structuring healthy, clean surroundings.",
+      badge: "Lifestyle",
+      color: "from-lime-50 to-emerald-50/20 text-emerald-800 border-lime-100"
+    },
+    {
+      icon: Shield,
+      title: "Gut Health",
+      description: "Restoring digestive health, optimizing nutrient absorption, and strengthening gut microflora to improve immunity and hormonal harmony.",
+      badge: "Digestion",
+      color: "from-purple-50 to-pink-50/20 text-purple-700 border-purple-100"
+    },
+    {
+      icon: Heart,
+      title: "Habit Transformation",
+      description: "Building permanent routines through micro-habits, accountability trackers, and daily progress to ensure long-term sustainability.",
+      badge: "Consistency",
+      color: "from-pink-50 to-rose-50/20 text-rose-700 border-rose-100"
     }
   ];
 

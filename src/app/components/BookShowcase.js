@@ -175,13 +175,13 @@ export default function BookShowcase() {
                 Glow with Garima
               </h2>
               <h3 className="font-display font-bold text-xl md:text-2xl text-secondary">
-                Wellness & Transformation
+                Author & Face Yoga Expert
               </h3>
             </div>
 
             {/* Pitch / Story */}
             <p className="text-text-muted text-sm sm:text-base leading-relaxed font-semibold">
-              Ready to break free from crash diets, align your hormones naturally, and step into the best version of yourself? This book contains the complete wellness blueprint based on Coach Garima's years of experience. Learn the exact lifestyle and 7-Pillar nutrition blueprint that helped her reverse a 30-year chronic thyroid condition and shed 20 kg without medication or starvation.
+              Ready to break free from crash diets, align your hormones naturally, and step into the best version of yourself? This book contains the complete wellness blueprint based on Coach Garima&apos;s years of experience. Learn the exact lifestyle and 7-Pillar nutrition blueprint that helped her reverse a 30-year chronic thyroid condition and shed 20 kg without medication or starvation.
             </p>
 
             {/* Bullet Highlights Grid */}
@@ -250,7 +250,7 @@ export default function BookShowcase() {
               </motion.a>
               
               <div className="text-center sm:text-left text-xs text-text-muted font-bold px-2">
-                Available in <span className="text-primary">Paperback</span> & <span className="text-secondary">Kindle Edition</span>
+                Available in <span className="text-primary">English Paperback</span> & <span className="text-secondary">Hindi Edition</span>
               </div>
             </div>
 

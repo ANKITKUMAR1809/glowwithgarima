@@ -229,7 +229,7 @@ export default function TestimonialsPage() {
               <div key={idx} className="p-6 bg-white border border-pink-50 rounded-2xl shadow-sm relative space-y-3">
                 <Quote className="w-8 h-8 text-pink-100 shrink-0" />
                 <p className="text-xs text-text-muted font-bold leading-relaxed">
-                  "{rev.text}"
+                  &ldquo;{rev.text}&rdquo;
                 </p>
                 <h4 className="font-bold text-primary text-xs pt-2 border-t border-zinc-200/40">
                   — {rev.name}

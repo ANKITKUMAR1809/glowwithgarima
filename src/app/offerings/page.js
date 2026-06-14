@@ -48,31 +48,22 @@ export default function Offerings() {
   // Group Yoga plans
   const yogaGroupPlans = [
     {
-      id: "yoga-hybrid-group-1",
-      title: "4 Days Yoga Session + 1 Hybrid",
-      duration: "6 Month Plan",
-      price: formatPrice("yoga-hybrid-group-1"),
-      actualPrice: formatActualPrice("yoga-hybrid-group-1"),
-      monthlyBreakdown: currency === "USD" ? "$16/month" : "₹1,550/month",
-      badge: "Best Value"
-    },
-    {
-      id: "yoga-hybrid-group-2",
-      title: "5 Days Yoga Session",
+      id: "yoga-hybrid-group-3days",
+      title: "1 Month Plan (3 Days/wk)",
       duration: "Monthly Plan",
-      price: formatPrice("yoga-hybrid-group-2"),
-      actualPrice: formatActualPrice("yoga-hybrid-group-2"),
-      monthlyBreakdown: currency === "USD" ? "$12.99/month" : "₹999/month",
-      badge: "Standard"
+      price: formatPrice("yoga-hybrid-group-3days"),
+      actualPrice: formatPrice("yoga-hybrid-group-3days"),
+      monthlyBreakdown: currency === "USD" ? "$29/month" : "₹1,999/month",
+      badge: "7 Day Trial Available"
     },
     {
-      id: "yoga-hybrid-group-3",
-      title: "1 Year Plan (5 Days Yoga)",
-      duration: "12 Month Plan",
-      price: formatPrice("yoga-hybrid-group-3"),
-      actualPrice: formatActualPrice("yoga-hybrid-group-3"),
-      monthlyBreakdown: currency === "USD" ? "$11/month" : "₹834/month",
-      badge: "Long Term"
+      id: "yoga-hybrid-group-5days",
+      title: "1 Month Plan (5 Days/wk)",
+      duration: "Monthly Plan",
+      price: formatPrice("yoga-hybrid-group-5days"),
+      actualPrice: formatPrice("yoga-hybrid-group-5days"),
+      monthlyBreakdown: currency === "USD" ? "$39/month" : "₹2,999/month",
+      badge: "7 Day Trial Available"
     }
   ];
 
@@ -104,28 +95,28 @@ export default function Offerings() {
   // Meal Plan pricing options
   const mealPlanOptions = [
     {
-      id: "meal-plan-3",
-      title: "3 Months (One-Time)",
-      price: formatPrice("meal-plan-3"),
-      actualPrice: formatActualPrice("meal-plan-3"),
-      description: currency === "USD" ? "Pay once and save $50 compared to monthly rates." : "Pay once and save ₹2,445 compared to monthly rates.",
-      badge: "Popular Deal"
+      id: "meal-plan-silver",
+      title: "Silver Tier",
+      price: formatPrice("meal-plan-silver"),
+      actualPrice: formatActualPrice("meal-plan-silver"),
+      description: "Basic customized 90 days nutrition plan with standard support & weekly followups.",
+      badge: "Popular"
     },
     {
-      id: "meal-plan-1",
-      title: "1 Month Plan",
-      price: formatPrice("meal-plan-1"),
-      actualPrice: formatActualPrice("meal-plan-1"),
-      description: "Month-to-month plan for nutrition guidance and followups.",
-      badge: "Flexible"
+      id: "meal-plan-gold",
+      title: "Gold Tier",
+      price: formatPrice("meal-plan-gold"),
+      actualPrice: formatActualPrice("meal-plan-gold"),
+      description: "Comprehensive 90 days nutrition, priority chat support, and natural cycle syncing blueprints.",
+      badge: "Recommended"
     },
     {
-      id: "meal-plan-installment", // custom placeholder, will route to meal-plan-3 in description
-      title: "3 Months (Installments)",
-      price: formatPrice("meal-plan-installment"),
-      actualPrice: formatActualPrice("meal-plan-installment"),
-      description: currency === "USD" ? "Paid as 2 installments of $110 (within 25 days)." : "Paid as 2 installments of ₹9,000 (within 25 days).",
-      badge: "Split Payment"
+      id: "meal-plan-platinum",
+      title: "Platinum Tier",
+      price: formatPrice("meal-plan-platinum"),
+      actualPrice: formatActualPrice("meal-plan-platinum"),
+      description: "Premium 90 days nutrition, 1-on-1 calls with Coach Garima, 24/7 priority support, cycle syncing & gut restoration guides.",
+      badge: "Premium"
     }
   ];
 
@@ -216,7 +207,15 @@ export default function Offerings() {
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto space-y-5">
-          <span className="text-xs font-bold uppercase tracking-wider text-primary">GWG Packages</span>
+          <div className="flex flex-col items-center gap-2">
+            <span className="block text-sm sm:text-base font-display font-extrabold text-[#E68A65] tracking-wide italic">
+              &ldquo;We don&apos;t believe in pricing, We just want your Transformation Only&rdquo;
+            </span>
+            <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100/60 rounded-full text-emerald-800 text-xs font-bold shadow-sm uppercase tracking-wider animate-pulse">
+              <span>📞 20 min Call & Free Demo Session</span>
+            </div>
+          </div>
+          <span className="text-xs font-bold uppercase tracking-wider text-primary block mt-4">GWG Packages</span>
           <h1 className="font-display font-extrabold text-4xl md:text-5xl text-primary leading-tight">
             Programs & Pricing
           </h1>
@@ -341,7 +340,12 @@ export default function Offerings() {
                 {/* Group Plans - Toggle options */}
                 <div className="lg:col-span-5 bg-gradient-to-br from-[#FCF9FB] to-white border border-pink-100 rounded-3xl p-6 flex flex-col justify-between space-y-6">
                   <div>
-                    <span className="font-display font-extrabold text-sm text-primary block mb-3 uppercase tracking-wider">Group Session Options</span>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-display font-extrabold text-sm text-primary block uppercase tracking-wider">Group Session Options</span>
+                      <span className="inline-block bg-primary text-white font-extrabold text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider animate-pulse shadow-sm">
+                        7 Day Trial
+                      </span>
+                    </div>
                     
                     <div className="space-y-3">
                       {yogaGroupPlans.map((plan, idx) => (
@@ -368,18 +372,21 @@ export default function Offerings() {
                       ))}
                     </div>
                   </div>
-
+ 
                   {/* Active Selected Group Plan Actions */}
                   <div className="pt-4 border-t border-zinc-150/40 space-y-3">
                     <div className="flex items-center justify-between text-xs font-semibold">
                       <span className="text-text-muted">Selected Group Tier:</span>
-                      <span className="text-primary font-bold">{yogaGroupPlans[yogaGroupPlan].title}</span>
+                      <span className="text-primary font-bold">{yogaGroupPlans[yogaGroupPlan]?.title || ""}</span>
                     </div>
                     <button
-                      onClick={() => openBooking(yogaGroupPlans[yogaGroupPlan].id)}
+                      onClick={() => {
+                        const activePlan = yogaGroupPlans[yogaGroupPlan];
+                        if (activePlan) openBooking(activePlan.id);
+                      }}
                       className="w-full py-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer shadow transition-all"
                     >
-                      Book Group Plan: {yogaGroupPlans[yogaGroupPlan].price}
+                      Book Group Plan: {yogaGroupPlans[yogaGroupPlan]?.price || ""}
                     </button>
                   </div>
                 </div>
@@ -441,7 +448,7 @@ export default function Offerings() {
 
                   <div className="bg-secondary/5 border border-secondary/15 p-4 rounded-xl">
                     <p className="text-[10px] text-secondary font-bold uppercase tracking-wider">Our Slogan</p>
-                    <p className="text-xs text-text-main font-bold italic">"Transform your body. Heal your mind. Elevate your life."</p>
+                    <p className="text-xs text-text-main font-bold italic">&ldquo;Transform your body. Heal your mind. Elevate your life.&rdquo;</p>
                   </div>
                 </div>
 
@@ -464,38 +471,39 @@ export default function Offerings() {
                     <span className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 block mb-3">Select Pricing Tier</span>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {/* 1 Month */}
-                      <div className="bg-white border border-zinc-200 p-4 rounded-2xl text-center flex flex-col justify-between hover:border-secondary transition-all">
+                      <div className="bg-zinc-50/70 border border-zinc-200 p-4 rounded-2xl text-center flex flex-col justify-between opacity-85 relative">
+                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-zinc-500 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase shadow-sm">Sold Out</span>
                         <div>
                           <span className="text-[9px] font-extrabold text-zinc-400 uppercase tracking-wide block">1 Month</span>
                           <span className="font-display font-extrabold text-lg text-secondary block mt-1">{formatPrice("hybrid-sessions-1")}</span>
                         </div>
                         <button
-                          onClick={() => openBooking("hybrid-sessions-1")}
-                          className="mt-3 w-full py-2 bg-[#00A8E8] hover:bg-blue-600 text-white rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                          disabled
+                          className="mt-3 w-full py-2 bg-zinc-200 text-zinc-400 rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-not-allowed"
                         >
-                          Book Now
+                          Closed
                         </button>
                       </div>
                       
                       {/* 3 Months */}
-                      <div className="bg-white border-2 border-secondary/20 p-4 rounded-2xl text-center flex flex-col justify-between hover:border-secondary transition-all relative">
-                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase">Save 11%</span>
+                      <div className="bg-zinc-50/70 border border-zinc-200 p-4 rounded-2xl text-center flex flex-col justify-between opacity-85 relative">
+                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-zinc-500 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase shadow-sm">Sold Out</span>
                         <div>
                           <span className="text-[9px] font-extrabold text-zinc-400 uppercase tracking-wide block">3 Months</span>
                           <span className="text-[9px] text-text-muted line-through block mt-1">{formatActualPrice("hybrid-sessions-3")}</span>
                           <span className="font-display font-extrabold text-lg text-secondary block">{formatPrice("hybrid-sessions-3")}</span>
                         </div>
                         <button
-                          onClick={() => openBooking("hybrid-sessions-3")}
-                          className="mt-3 w-full py-2 bg-[#00A8E8] hover:bg-blue-600 text-white rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                          disabled
+                          className="mt-3 w-full py-2 bg-zinc-200 text-zinc-400 rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-not-allowed"
                         >
-                          Book Now
+                          Closed
                         </button>
                       </div>
-
+ 
                       {/* 6 Months */}
-                      <div className="bg-white border-2 border-primary/20 p-4 rounded-2xl text-center flex flex-col justify-between hover:border-secondary transition-all relative">
-                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-accent text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase">Best Deal</span>
+                      <div className="bg-white border-2 border-secondary/20 p-4 rounded-2xl text-center flex flex-col justify-between hover:border-secondary transition-all relative">
+                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shadow-sm">10 Slots Open</span>
                         <div>
                           <span className="text-[9px] font-extrabold text-zinc-400 uppercase tracking-wide block">6 Months</span>
                           <span className="text-[9px] text-text-muted line-through block mt-1">{formatActualPrice("hybrid-sessions-6")}</span>
@@ -600,9 +608,14 @@ export default function Offerings() {
                 {/* Left side information */}
                 <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
                   <div className="space-y-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-accent text-[10px] font-extrabold uppercase tracking-wide">
-                      <Apple className="w-3.5 h-3.5" /> Customized Nutrition
-                    </span>
+                    <div className="space-y-1">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-accent text-[10px] font-extrabold uppercase tracking-wide">
+                        <Apple className="w-3.5 h-3.5" /> Customized Nutrition
+                      </span>
+                      <span className="inline-block bg-accent/10 text-accent font-extrabold text-[9px] px-2.5 py-0.5 rounded uppercase tracking-wider ml-2">
+                        Complete Transformation Plan
+                      </span>
+                    </div>
                     <h2 className="font-display font-extrabold text-2xl md:text-3xl text-primary">
                       Glow Meal Plan - 90 Days
                     </h2>
@@ -627,7 +640,12 @@ export default function Offerings() {
                 {/* Right side selector */}
                 <div className="lg:col-span-5 bg-gradient-to-br from-[#FAF8F5] to-white border border-pink-100 rounded-3xl p-6 flex flex-col justify-between space-y-6">
                   <div>
-                    <span className="font-display font-extrabold text-sm text-primary block mb-3 uppercase tracking-wider">Select Payment Route</span>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-display font-extrabold text-sm text-primary block uppercase tracking-wider">Select Payment Route</span>
+                      <span className="inline-block bg-primary text-white font-extrabold text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                        Installments Available
+                      </span>
+                    </div>
                     
                     <div className="space-y-3">
                       {mealPlanOptions.map((option, idx) => (
@@ -657,20 +675,20 @@ export default function Offerings() {
 
                   <div className="space-y-3">
                     <p className="text-[10px] text-text-muted leading-relaxed font-semibold bg-white p-3 rounded-lg border border-zinc-100">
-                      {mealPlanOptions[mealPlanOption].description}
+                      {mealPlanOptions[mealPlanOption]?.description || ""}
                     </p>
                     <button
                       onClick={() => {
-                        // Route installment option to standard 3-month plan listing
-                        const selectId = mealPlanOptions[mealPlanOption].id === "meal-plan-installment"
-                          ? "meal-plan-3"
-                          : mealPlanOptions[mealPlanOption].id;
-                        openBooking(selectId);
+                        const activeOption = mealPlanOptions[mealPlanOption];
+                        if (activeOption) openBooking(activeOption.id);
                       }}
                       className="w-full py-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer shadow transition-all"
                     >
-                      Book Meal Plan: {mealPlanOptions[mealPlanOption].price}
+                      Book Meal Plan: {mealPlanOptions[mealPlanOption]?.price || ""}
                     </button>
+                    <p className="text-[9px] text-[#75B043] font-bold text-center mt-2 uppercase tracking-wide">
+                      Offers and pricing are available in group and community. Start your journey with a token amount + installments.
+                    </p>
                   </div>
                 </div>
               </section>
@@ -736,6 +754,9 @@ export default function Offerings() {
                     </span>
                     <h3 className="font-display font-extrabold text-3xl text-primary-dark">{formatPrice("hair-solution")}</h3>
                     <p className="text-xs text-text-muted font-bold">Comprehensive 9-session botanical care system.</p>
+                    <span className="inline-block bg-accent/10 text-accent font-extrabold text-[9px] px-2.5 py-1 rounded uppercase tracking-wider animate-pulse shadow-sm">
+                      Includes Brand Secret Oils & Remedies
+                    </span>
                   </div>
                   
                   <div className="p-3 bg-primary/5 rounded-xl border border-pink-100/30 text-[10px] text-primary font-semibold">
@@ -750,7 +771,7 @@ export default function Offerings() {
                   </button>
                   
                   <span className="text-[10px] text-text-muted font-semibold">
-                    "Because beautiful hair starts with healthy roots."
+                    &ldquo;Because beautiful hair starts with healthy roots.&rdquo;
                   </span>
                 </div>
               </section>

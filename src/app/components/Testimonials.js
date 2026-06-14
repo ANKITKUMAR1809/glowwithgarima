@@ -99,7 +99,7 @@ export default function Testimonials() {
                 {textTestimonials[currentIndex].achievement}
               </span>
               <p className="text-[#1A2421] text-base md:text-lg leading-relaxed italic font-medium">
-                "{textTestimonials[currentIndex].quote}"
+                &ldquo;{textTestimonials[currentIndex].quote}&rdquo;
               </p>
               
               <div className="flex items-center gap-4 pt-4 border-t border-zinc-200/50">

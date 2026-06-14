@@ -79,13 +79,13 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-text-muted text-sm sm:text-base leading-relaxed font-semibold">
               <p>
-                "For years, I was trapped in a cycle of constant exhaustion, brain fog, and unexplained weight gain. I was diagnosed with a severe thyroid issue that disrupted my metabolism. I tried standard calorie restriction and spent hours doing intense workouts, but my scale remained stuck and my energy levels bottomed out."
+                &ldquo;For years, I was trapped in a cycle of constant exhaustion, brain fog, and unexplained weight gain. I was diagnosed with a severe thyroid issue that disrupted my metabolism. I tried standard calorie restriction and spent hours doing intense workouts, but my scale remained stuck and my energy levels bottomed out.&rdquo;
               </p>
               <p>
-                "That is when I stopped listening to generic fitness advice and began researching functional physiology. I realized that my body was under chronic hormonal stress. I redesigned my lifestyle: aligning my meals with my thyroid requirements, lowering cortisol through yoga and guided mindfulness, and focusing on restorative sleep."
+                &ldquo;That is when I stopped listening to generic fitness advice and began researching functional physiology. I realized that my body was under chronic hormonal stress. I redesigned my lifestyle: aligning my meals with my thyroid requirements, lowering cortisol through yoga and guided mindfulness, and focusing on restorative sleep.&rdquo;
               </p>
               <p>
-                "The results were miraculous. I reversed my thyroid symptoms naturally, restored my energy, and shed 20 kg. That personal transformation changed my life, and I realized that thousands of women were fighting the same silent battle with their bodies. I founded **Glow With Garima** to give women a clear, sustainable roadmap back to vitality."
+                &ldquo;The results were miraculous. I reversed my thyroid symptoms naturally, restored my energy, and shed 20 kg. That personal transformation changed my life, and I realized that thousands of women were fighting the same silent battle with their bodies. I founded **Glow With Garima** to give women a clear, sustainable roadmap back to vitality.&rdquo;
               </p>
             </div>
           </div>
