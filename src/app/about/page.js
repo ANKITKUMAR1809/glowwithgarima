@@ -179,7 +179,7 @@ export default function About() {
               </div>
               <div>
                 <span className="text-xs text-text-muted block font-bold">Empowering Transformations</span>
-                <span className="font-display font-extrabold text-lg text-secondary">100+ active women transformations completed.</span>
+                <span className="font-display font-extrabold text-lg text-secondary">1100+ active women transformations completed.</span>
               </div>
               <div>
                 <span className="text-xs text-text-muted block font-bold">Classes Led</span>

@@ -36,11 +36,11 @@ export default function Header() {
   ];
 
   const programs = [
-    { name: "GWG Yoga Program", href: "/programs/yoga-hybrid" },
-    { name: "Online Hybrid Sessions", href: "/programs/online-hybrid" },
-    { name: "GWG Anti-Aging Offer", href: "/programs/anti-aging" },
-    { name: "Complete Meal Plan", href: "/programs/meal-plan" },
-    { name: "Complete Hair Solution", href: "/programs/hair-solution" },
+    { name: "GWG Yoga Program", href: "/programs/gwg-yoga-program" },
+    { name: "Online Hybrid Sessions", href: "/programs/online-hybrid-sessions" },
+    { name: "GWG Anti-Aging Offer", href: "/programs/gwg-anti-aging-offer" },
+    { name: "Complete Transformation Plan", href: "/programs/complete-transformation-plan" },
+    { name: "Complete Hair Solution", href: "/programs/complete-hair-solution" },
   ];
 
   // Drawer Stagger Variants

@@ -27,7 +27,7 @@ const BrandItems = () => (
       <div key={idx} className="flex items-center gap-12 shrink-0">
         {item.isLink ? (
           <Link 
-            href="/programs/yoga-hybrid" 
+            href="/programs/gwg-yoga-program" 
             className="text-white hover:text-accent-gold hover:scale-105 active:scale-95 transition-all duration-200 underline decoration-dashed underline-offset-4 decoration-pink-300 hover:decoration-solid cursor-pointer font-extrabold tracking-widest relative group flex items-center gap-2.5"
           >
             {/* Blinking Live Beacon Dot */}

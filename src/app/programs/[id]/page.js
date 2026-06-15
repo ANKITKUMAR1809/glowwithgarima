@@ -21,7 +21,7 @@ import BookingModal from "../../components/BookingModal";
 import { useCurrency } from "../../context/CurrencyContext";
 
 const programData = {
-  "yoga-hybrid": {
+  "gwg-yoga-program": {
     title: "GWG Yoga Program",
     category: "Yoga & Holistic Training",
     tagline: "Transform Your Core, Tone Your Body, and Reset Your Mind",
@@ -62,7 +62,7 @@ const programData = {
     ],
     image: "/wellness_hero.png"
   },
-  "online-hybrid": {
+  "online-hybrid-sessions": {
     title: "Online Hybrid Sessions",
     category: "Live Interactive Group Coaching",
     tagline: "Strength, Mobility, and Mindfulness Live From Your Home",
@@ -103,7 +103,7 @@ const programData = {
     ],
     image: "/aboutUsImage.avif"
   },
-  "anti-aging": {
+  "gwg-anti-aging-offer": {
     title: "GWG Anti-Aging Offer",
     category: "Skin & Face Yoga Special",
     tagline: "Restore Your Organic Glow & Release Facial Tension Naturally",
@@ -144,8 +144,8 @@ const programData = {
     ],
     image: "/headerImage.avif"
   },
-  "meal-plan": {
-    title: "Complete Meal Plan",
+  "complete-transformation-plan": {
+    title: "Complete Transformation Plan",
     category: "Hormonal & Metabolic Nutrition",
     tagline: "Nourish Your Body and Heal From Within Without Starvation",
     description: "A personalized, home-cooked food blueprint designed to target fat loss blocks, thyroid optimization, and PCOD/PCOS recovery. Exclusively for women: Meals configured around cycle syncing, cortisol control, and gut restoration.",
@@ -185,7 +185,7 @@ const programData = {
     ],
     image: "/offering/of2.avif"
   },
-  "hair-solution": {
+  "complete-hair-solution": {
     title: "Complete Hair Solution",
     category: "Hair & Scalp Health Batch",
     tagline: "Botanical Care to Reverse Hair Loss and Restore Silky Texture",

@@ -61,9 +61,9 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
       icon: Clock
     },
     "demo-meal-plan": {
-      title: "Free Demo: Complete Meal Plan",
+      title: "Free Demo: Complete Transformation Plan",
       price: "Free",
-      description: "Book a Free Demo or 20 Min Discovery Call for Complete Meal Plan.",
+      description: "Book a Free Demo or 20 Min Discovery Call for Complete Transformation Plan.",
       type: "Free Call & Demo",
       duration: "20 Minutes",
       icon: Clock
@@ -157,7 +157,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
       icon: Heart
     },
     "meal-plan-silver": {
-      title: "Complete Meal Plan: Silver Tier (90 Days)",
+      title: "Complete Transformation Plan: Silver Tier (90 Days)",
       price: "Pricing on Call",
       description: "Exclusively for females. Silver Tier: Basic customized 90 days nutrition with standard followups.",
       type: "Nutrition Plan",
@@ -165,7 +165,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
       icon: Heart
     },
     "meal-plan-gold": {
-      title: "Complete Meal Plan: Gold Tier (90 Days)",
+      title: "Complete Transformation Plan: Gold Tier (90 Days)",
       price: "Pricing on Call",
       description: "Exclusively for females. Gold Tier: Comprehensive 90 days nutrition, priority chat support, cycle syncing.",
       type: "Nutrition Plan",
@@ -173,7 +173,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
       icon: Heart
     },
     "meal-plan-platinum": {
-      title: "Complete Meal Plan: Platinum Tier (90 Days)",
+      title: "Complete Transformation Plan: Platinum Tier (90 Days)",
       price: "Pricing on Call",
       description: "Exclusively for females. Platinum Tier: Premium 90 days nutrition, 1-on-1 calls, 24/7 support, cycle & gut guides.",
       type: "Nutrition Plan",

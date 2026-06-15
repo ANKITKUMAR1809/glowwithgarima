@@ -42,8 +42,8 @@ export default function Footer() {
     { name: "Home", href: "/" },
     { name: "About Me", href: "/about" },
     { name: "7 Pillars", href: "/pillars" },
-    { name: "Gallery & Portfolio", href: "/gallery" },
-    { name: "Reviews", href: "/testimonials" },
+    { name: "Transformations", href: "/gallery" },
+    { name: "Testimonials", href: "/testimonials" },
   ];
 
   return (

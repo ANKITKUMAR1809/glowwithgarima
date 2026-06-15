@@ -27,6 +27,84 @@ import GlowWellnessHub from "./components/GlowWellnessHub";
 import PillarWheel from "./components/PillarWheel";
 import FloatingSvgAnimation from "./components/FloatingSvgAnimation";
 
+const credentials = [
+  {
+    title: "Certified Fitness Trainer",
+    issuer: "MIFi (Mission India Fitness Institute)",
+    year: "2022",
+    badgeColor: "bg-pink-50 text-primary border-pink-100",
+    svg: (
+      <svg className="w-8 h-8 text-primary stroke-[1.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <path className="origin-center group-hover:rotate-45 transition-transform duration-500" d="M6.5 6.5h11M6.5 9.5h11M18 5v14M21 7v10M3 7v10M6 5v14" />
+        <circle cx="12" cy="12" r="3" className="group-hover:scale-125 transition-transform duration-500 origin-center text-secondary/30 fill-current" />
+      </svg>
+    )
+  },
+  {
+    title: "Certified Nutrition Specialist",
+    issuer: "MIFI (Mission India Fitness Institute)",
+    year: "2022",
+    badgeColor: "bg-emerald-50 text-accent border-emerald-100",
+    svg: (
+      <svg className="w-8 h-8 text-accent stroke-[1.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <path className="origin-bottom group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500" d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.2C18 17 15.6 20 11 20z" />
+        <path d="M19 2c-2.26 4.33-5.27 7.14-8 18" />
+      </svg>
+    )
+  },
+  {
+    title: "Certified Supplement Specialist",
+    issuer: "MIFI (Mission India Fitness Institute)",
+    year: "2022",
+    badgeColor: "bg-blue-50 text-secondary border-blue-100",
+    svg: (
+      <svg className="w-8 h-8 text-secondary stroke-[1.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <g className="origin-center group-hover:scale-105 transition-transform duration-300">
+          <path className="group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-transform duration-300" d="m10.5 13.5 3-3" />
+          <path className="group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-transform duration-300" d="m8.5 8.5 7 7" />
+          <path className="group-hover:translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-300" d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </g>
+      </svg>
+    )
+  },
+  {
+    title: "Holistic Health Coach",
+    issuer: "FBM (Fit Bharat Mission)",
+    year: "2024",
+    badgeColor: "bg-amber-50 text-[#D97706] border-amber-100",
+    svg: (
+      <svg className="w-8 h-8 text-[#D97706] stroke-[1.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <path className="origin-center group-hover:scale-110 transition-transform duration-500" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path className="fill-[#D97706]/20" d="M12 14.5s-2.5-1.5-2.5-3.5A2.5 2.5 0 0 1 12 8.5a2.5 2.5 0 0 1 2.5 2.5c0 2-2.5 3.5-2.5 3.5z" />
+      </svg>
+    )
+  },
+  {
+    title: "Therapeutic Yoga Teacher",
+    issuer: "Yog Namaste Academy",
+    year: "2024",
+    badgeColor: "bg-purple-50 text-purple-600 border-purple-100",
+    svg: (
+      <svg className="w-8 h-8 text-purple-600 stroke-[1.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <path className="origin-bottom group-hover:scale-110 transition-transform duration-500" d="M12 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9z" />
+        <path className="origin-center group-hover:rotate-45 transition-transform duration-700" d="M12 8v8M8 12h8M9.17 9.17l5.66 5.66M9.17 14.83l5.66-5.66" />
+      </svg>
+    )
+  },
+  {
+    title: "International Face Yoga Expert",
+    issuer: "Manasvaani",
+    year: "2025",
+    badgeColor: "bg-rose-50 text-rose-500 border-rose-100",
+    svg: (
+      <svg className="w-8 h-8 text-rose-500 stroke-[1.5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+        <path className="origin-center group-hover:scale-110 transition-transform duration-500" d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+        <circle cx="12" cy="12" r="1.5" className="fill-current" />
+      </svg>
+    )
+  }
+];
+
 export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(null);
@@ -71,7 +149,7 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
               </motion.button>
               <Link
-                href="/programs/yoga-hybrid"
+                href="/programs/gwg-yoga-program"
                 className="px-8 py-4.5 bg-white hover:bg-pink-50/20 border border-pink-100/60 text-primary font-bold rounded-2xl text-sm transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 View Programs & Book
@@ -155,6 +233,49 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Accredited Credentials & Certifications Section */}
+      <section className="max-w-7xl mx-auto px-6 py-12 md:py-16 relative border-t border-pink-50/50">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+          <span className="text-xs font-bold uppercase tracking-wider text-primary">Accreditations & Board Certifications</span>
+          <h2 className="font-display font-extrabold text-3xl md:text-4xl text-primary leading-tight">
+            Accredited Clinical & <br />
+            <span className="text-secondary bg-gradient-to-r from-primary via-primary-light to-secondary bg-clip-text text-transparent">Yoga Credentials</span>
+          </h2>
+          <p className="text-text-muted text-xs md:text-sm font-semibold max-w-lg mx-auto">
+            Scientific, hormone-aligned, and certified coaching practices to ensure safe, custom fat loss and metabolic healing.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {credentials.map((cred, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ y: -6 }}
+              className="bg-white/80 backdrop-blur-md border border-pink-100/50 hover:border-pink-200 rounded-[2rem] p-6 hover:shadow-premium-hover transition-all duration-300 relative group flex flex-col justify-between overflow-hidden"
+            >
+              <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div>
+                <span className="absolute top-6 right-6 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-zinc-50 border border-zinc-100 text-zinc-500">
+                  {cred.year}
+                </span>
+
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border shadow-sm ${cred.badgeColor} mb-6 transition-all duration-300 group-hover:rotate-3`}>
+                  {cred.svg}
+                </div>
+
+                <h3 className="font-display font-extrabold text-lg text-primary leading-snug pr-12">
+                  {cred.title}
+                </h3>
+              </div>
+
+              <span className="text-[10px] font-bold uppercase tracking-wider text-secondary mt-8 block">
+                {cred.issuer}
+              </span>
+            </motion.div>
+          ))}
         </div>
       </section>
 
