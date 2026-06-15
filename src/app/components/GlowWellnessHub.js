@@ -20,6 +20,14 @@ import {
 
 export default function GlowWellnessHub({ onOpenBooking }) {
   const [activeTab, setActiveTab] = useState("BREATH"); // BREATH, HYDRATION, WEIGHT
+  const [dashboardMounted, setDashboardMounted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDashboardMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   // ==========================================
   // TAB 1: COSMIC BREATH GAME STATE & LOGIC
@@ -212,10 +220,12 @@ export default function GlowWellnessHub({ onOpenBooking }) {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`relative py-2.5 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-colors duration-300 flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center ${
-                  isActive ? "text-white" : "text-text-muted hover:text-primary"
+                  isActive 
+                    ? (dashboardMounted ? "text-white" : "bg-primary text-white shadow-md") 
+                    : "text-text-muted hover:text-primary"
                 }`}
               >
-                {isActive && (
+                {isActive && dashboardMounted && (
                   <motion.span
                     layoutId="activeDashboardTab"
                     className="absolute inset-0 bg-primary rounded-xl -z-10 shadow-md"

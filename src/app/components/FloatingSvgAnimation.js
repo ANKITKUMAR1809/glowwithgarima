@@ -8,25 +8,28 @@ export default function FloatingSvgAnimation() {
   const [particles, setParticles] = useState([]);
 
   useEffect(() => {
-    setMounted(true);
-    
-    // Generate particles on client-side to prevent Next.js SSR hydration mismatches
-    const items = Array.from({ length: 15 }).map((_, i) => {
-      const isLeaf = i % 3 === 0;
-      const isSparkle = i % 3 === 1;
-      
-      return {
-        id: i,
-        type: isLeaf ? "leaf" : isSparkle ? "sparkle" : "circle",
-        left: `${5 + Math.random() * 90}%`,
-        size: 15 + Math.random() * 25,
-        delay: Math.random() * 6,
-        duration: 20 + Math.random() * 20,
-        color: isLeaf ? "text-[#75B043]" : isSparkle ? "text-[#FBC02D]" : "text-[#D63384]",
-        opacity: 0.04 + Math.random() * 0.08,
-      };
-    });
-    setParticles(items);
+    const timer = setTimeout(() => {
+      // Generate particles on client-side to prevent Next.js SSR hydration mismatches
+      const items = Array.from({ length: 15 }).map((_, i) => {
+        const isLeaf = i % 3 === 0;
+        const isSparkle = i % 3 === 1;
+        
+        return {
+          id: i,
+          type: isLeaf ? "leaf" : isSparkle ? "sparkle" : "circle",
+          left: `${5 + Math.random() * 90}%`,
+          size: 15 + Math.random() * 25,
+          delay: Math.random() * 6,
+          duration: 20 + Math.random() * 20,
+          color: isLeaf ? "text-[#75B043]" : isSparkle ? "text-[#FBC02D]" : "text-[#D63384]",
+          opacity: 0.04 + Math.random() * 0.08,
+        };
+      });
+      setParticles(items);
+      setMounted(true);
+    }, 0);
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (!mounted) return null;
