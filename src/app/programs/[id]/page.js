@@ -226,8 +226,8 @@ export default function ProgramPage({ params }) {
       <div className="max-w-7xl mx-auto px-6 py-24 text-center space-y-6">
         <h1 className="font-display font-extrabold text-3xl text-primary">Program Not Found</h1>
         <p className="text-text-muted">The program you are looking for does not exist or has been renamed.</p>
-        <Link href="/offerings" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-bold">
-          View All Programs
+        <Link href="/" className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-bold">
+          Back to Home
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -244,8 +244,8 @@ export default function ProgramPage({ params }) {
         
         {/* Breadcrumb & Top Tag */}
         <div className="pt-6">
-          <Link href="/offerings" className="text-xs font-bold text-primary hover:underline flex items-center gap-1">
-            ← Back to All Programs
+          <Link href="/" className="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+            ← Back to Home
           </Link>
         </div>
 
@@ -302,12 +302,6 @@ export default function ProgramPage({ params }) {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               
-              <Link
-                href="/offerings"
-                className="px-8 py-4 bg-white hover:bg-pink-50/20 border border-pink-100/60 text-primary font-bold rounded-2xl text-sm transition-all shadow-sm flex items-center justify-center gap-2"
-              >
-                View Full Pricing Tiers
-              </Link>
             </div>
           </div>
 

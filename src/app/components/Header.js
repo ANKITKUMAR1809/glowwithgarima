@@ -31,7 +31,7 @@ export default function Header() {
     { name: "About Me", href: "/about" },
     { name: "7 Pillars", href: "/pillars" },
     { name: "Transformations", href: "/gallery" },
-    { name: "Programs", href: "/offerings" },
+    { name: "Programs", href: "#" },
     { name: "Testimonials", href: "/testimonials" },
   ];
 
@@ -41,7 +41,6 @@ export default function Header() {
     { name: "GWG Anti-Aging Offer", href: "/programs/anti-aging" },
     { name: "Complete Meal Plan", href: "/programs/meal-plan" },
     { name: "Complete Hair Solution", href: "/programs/hair-solution" },
-    { name: "All Programs & Pricing", href: "/offerings" },
   ];
 
   // Drawer Stagger Variants
@@ -114,7 +113,7 @@ export default function Header() {
           >
             {navLinks.map((link, idx) => {
               if (link.name === "Programs") {
-                const isProgramsActive = pathname.startsWith("/programs") || pathname === "/offerings";
+                const isProgramsActive = pathname.startsWith("/programs");
                 return (
                   <div
                     key={link.href}
@@ -283,7 +282,7 @@ export default function Header() {
                 >
                   {navLinks.map((link) => {
                     if (link.name === "Programs") {
-                      const isProgramsActive = pathname.startsWith("/programs") || pathname === "/offerings";
+                      const isProgramsActive = pathname.startsWith("/programs");
                       return (
                         <motion.div key={link.href} variants={drawerItemVariants} className="space-y-2">
                           <button

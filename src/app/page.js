@@ -71,7 +71,7 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
               </motion.button>
               <Link
-                href="/offerings"
+                href="/programs/yoga-hybrid"
                 className="px-8 py-4.5 bg-white hover:bg-pink-50/20 border border-pink-100/60 text-primary font-bold rounded-2xl text-sm transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 View Programs & Book

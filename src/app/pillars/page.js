@@ -116,7 +116,7 @@ export default function Pillars() {
           </p>
           <div>
             <Link
-              href="/offerings"
+              href="/programs/yoga-hybrid"
               className="px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl text-sm transition-all shadow-premium inline-flex items-center gap-2 hover:-translate-y-0.5"
             >
               Select Your Program & Book

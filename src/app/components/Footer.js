@@ -43,7 +43,6 @@ export default function Footer() {
     { name: "About Me", href: "/about" },
     { name: "7 Pillars", href: "/pillars" },
     { name: "Gallery & Portfolio", href: "/gallery" },
-    { name: "Programs & Pricing", href: "/offerings" },
     { name: "Reviews", href: "/testimonials" },
   ];
 
