@@ -36,6 +36,46 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
   }, [initialSelectedOption, isOpen]);
   
   const listings = {
+    "demo-yoga-hybrid": {
+      title: "Free Demo: GWG Yoga Program",
+      price: "Free",
+      description: "Book a Free Demo or 20 Min Discovery Call for GWG Yoga Program.",
+      type: "Free Call & Demo",
+      duration: "20 Minutes",
+      icon: Clock
+    },
+    "demo-online-hybrid": {
+      title: "Free Demo: Online Hybrid Sessions",
+      price: "Free",
+      description: "Book a Free Demo or 20 Min Discovery Call for Online Hybrid Sessions.",
+      type: "Free Call & Demo",
+      duration: "20 Minutes",
+      icon: Clock
+    },
+    "demo-anti-aging": {
+      title: "Free Demo: GWG Anti-Aging Offer",
+      price: "Free",
+      description: "Book a Free Demo or 20 Min Discovery Call for GWG Anti-Aging Offer.",
+      type: "Free Call & Demo",
+      duration: "20 Minutes",
+      icon: Clock
+    },
+    "demo-meal-plan": {
+      title: "Free Demo: Complete Meal Plan",
+      price: "Free",
+      description: "Book a Free Demo or 20 Min Discovery Call for Complete Meal Plan.",
+      type: "Free Call & Demo",
+      duration: "20 Minutes",
+      icon: Clock
+    },
+    "demo-hair-solution": {
+      title: "Free Demo: Complete Hair Solution",
+      price: "Free",
+      description: "Book a Free Demo or 20 Min Discovery Call for Complete Hair Solution.",
+      type: "Free Call & Demo",
+      duration: "20 Minutes",
+      icon: Clock
+    },
     "discovery-20": {
       title: "Free 20 Min Discovery Call & Demo Session",
       price: "Free",
@@ -46,7 +86,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     },
     "discovery-45": {
       title: "Discovery Call for 45 mins",
-      price: formatPrice("discovery-45"),
+      price: "Pricing on Call",
       description: "Personalized guidance, hormone balancing insights, and root cause analysis.",
       type: "1 on 1 Call",
       duration: "45 Minutes",
@@ -54,7 +94,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     },
     "discovery-30": {
       title: "Discovery Call for 30 mins",
-      price: formatPrice("discovery-30"),
+      price: "Pricing on Call",
       description: "Interactive session for beginners/intermediates to improve their wellness journey.",
       type: "1 on 1 Call",
       duration: "30 Minutes",
@@ -62,22 +102,22 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     },
     "merchandise-book": {
       title: "Glow with Garima Book Pre-Book",
-      price: formatPrice("merchandise-book"),
+      price: "Pricing on Call",
       description: "7 Pillars Blueprint, meal plans, sample routines, and action guides. 30% off for first 100!",
       type: "Transformational Book",
       duration: "Digital/Hardcopy",
       icon: BookOpen
     },
     "yoga-hybrid-personal": {
-      title: "Personal Session (Yoga & Hybrid)",
-      price: formatPrice("yoga-hybrid-personal"),
+      title: "GWG Yoga Program: Personal Session",
+      price: "Pricing on Call",
       description: "Exclusively for females. 6-Month Plan: 3 Days Hybrid, customized timing, 1-on-1 mentoring.",
       type: "1-on-1 Personal",
       duration: "6 Months",
       icon: Heart
     },
     "yoga-hybrid-group-3days": {
-      title: "Group Yoga: 1 Month Plan (3 Days/wk)",
+      title: "GWG Yoga Program: 1 Month Plan (3 Days/wk)",
       price: formatPrice("yoga-hybrid-group-3days"),
       description: "Exclusively for females. Monthly Plan: 3 Days Yoga session per week with 7 Day Trial.",
       type: "Group Session",
@@ -85,48 +125,80 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
       icon: Heart
     },
     "yoga-hybrid-group-5days": {
-      title: "Group Yoga: 1 Month Plan (5 Days/wk)",
+      title: "GWG Yoga Program: 1 Month Plan (5 Days/wk)",
       price: formatPrice("yoga-hybrid-group-5days"),
       description: "Exclusively for females. Monthly Plan: 5 Days Yoga session per week with 7 Day Trial.",
       type: "Group Session",
       duration: "1 Month",
       icon: Heart
     },
+    "hybrid-sessions-1": {
+      title: "Online Hybrid Sessions: 1 Month",
+      price: formatPrice("hybrid-sessions-1"),
+      description: "Exclusively for females. 12 Hybrid Sessions (Wed, Fri, Sun at 8:30 AM).",
+      type: "Online Session",
+      duration: "1 Month",
+      icon: Heart
+    },
+    "hybrid-sessions-3": {
+      title: "Online Hybrid Sessions: 3 Months",
+      price: "Pricing on Call",
+      description: "Exclusively for females. 36 Hybrid Sessions (Wed, Fri, Sun at 8:30 AM).",
+      type: "Online Session",
+      duration: "3 Months",
+      icon: Heart
+    },
     "hybrid-sessions-6": {
-      title: "Hybrid Sessions: 6 Months",
-      price: formatPrice("hybrid-sessions-6"),
+      title: "Online Hybrid Sessions: 6 Months",
+      price: "Pricing on Call",
       description: "Exclusively for females. 72 Hybrid Sessions (Wed, Fri, Sun at 8:30 AM).",
       type: "Online Session",
       duration: "6 Months",
       icon: Heart
     },
     "meal-plan-silver": {
-      title: "Glow Meal Plan: Silver Tier (90 Days)",
-      price: formatPrice("meal-plan-silver"),
+      title: "Complete Meal Plan: Silver Tier (90 Days)",
+      price: "Pricing on Call",
       description: "Exclusively for females. Silver Tier: Basic customized 90 days nutrition with standard followups.",
       type: "Nutrition Plan",
       duration: "90 Days",
       icon: Heart
     },
     "meal-plan-gold": {
-      title: "Glow Meal Plan: Gold Tier (90 Days)",
-      price: formatPrice("meal-plan-gold"),
+      title: "Complete Meal Plan: Gold Tier (90 Days)",
+      price: "Pricing on Call",
       description: "Exclusively for females. Gold Tier: Comprehensive 90 days nutrition, priority chat support, cycle syncing.",
       type: "Nutrition Plan",
       duration: "90 Days",
       icon: Heart
     },
     "meal-plan-platinum": {
-      title: "Glow Meal Plan: Platinum Tier (90 Days)",
-      price: formatPrice("meal-plan-platinum"),
+      title: "Complete Meal Plan: Platinum Tier (90 Days)",
+      price: "Pricing on Call",
       description: "Exclusively for females. Platinum Tier: Premium 90 days nutrition, 1-on-1 calls, 24/7 support, cycle & gut guides.",
       type: "Nutrition Plan",
       duration: "90 Days",
       icon: Heart
     },
+    "anti-aging-11": {
+      title: "Anti-Aging Facial Transformation: 11 Sessions",
+      price: formatPrice("anti-aging-11"),
+      description: "Exclusively for females. 1-Month Plan (8:40 PM - 9:40 PM, Thu/Sun off).",
+      type: "Skin/Face Yoga",
+      duration: "1 Month",
+      icon: Heart
+    },
+    "anti-aging-22": {
+      title: "Anti-Aging Facial Transformation: 22 Sessions",
+      price: "Pricing on Call",
+      description: "Exclusively for females. 2-Month Plan (8:40 PM - 9:40 PM, Thu/Sun off).",
+      type: "Skin/Face Yoga",
+      duration: "2 Months",
+      icon: Heart
+    },
     "anti-aging-33": {
       title: "Anti-Aging Facial Transformation: 33 Sessions",
-      price: formatPrice("anti-aging-33"),
+      price: "Pricing on Call",
       description: "Exclusively for females. 3-Month Plan (8:40 PM - 9:40 PM, Thu/Sun off).",
       type: "Skin/Face Yoga",
       duration: "3 Months",
@@ -134,7 +206,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     },
     "hair-solution": {
       title: "Complete Hair Solution Batch",
-      price: formatPrice("hair-solution"),
+      price: "Pricing on Call",
       description: "Exclusively for females. 9 Sessions (6 recorded remedies + 3 technique live sessions).",
       type: "Hair Care Batch",
       duration: "9 Sessions",
@@ -174,8 +246,8 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
   };
 
   const getSubmitButtonText = () => {
-    if (formData.selectedListing === "discovery-20") {
-      return "Book Free 20 Min Discovery Call";
+    if (formData.selectedListing === "discovery-20" || formData.selectedListing.startsWith("demo-")) {
+      return "Book Free Demo / Discovery Call";
     }
     return "Get 1-on-1 Session";
   };

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Heart } from "lucide-react";
+import { Menu, X, Phone, Heart, ChevronDown } from "lucide-react";
 import BookingModal from "./BookingModal";
 import TopBar from "./TopBar";
 
@@ -15,6 +15,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +33,15 @@ export default function Header() {
     { name: "Transformations", href: "/gallery" },
     { name: "Programs", href: "/offerings" },
     { name: "Testimonials", href: "/testimonials" },
+  ];
+
+  const programs = [
+    { name: "GWG Yoga Program", href: "/programs/yoga-hybrid" },
+    { name: "Online Hybrid Sessions", href: "/programs/online-hybrid" },
+    { name: "GWG Anti-Aging Offer", href: "/programs/anti-aging" },
+    { name: "Complete Meal Plan", href: "/programs/meal-plan" },
+    { name: "Complete Hair Solution", href: "/programs/hair-solution" },
+    { name: "All Programs & Pricing", href: "/offerings" },
   ];
 
   // Drawer Stagger Variants
@@ -102,6 +113,76 @@ export default function Header() {
             onMouseLeave={() => setHoveredIndex(null)}
           >
             {navLinks.map((link, idx) => {
+              if (link.name === "Programs") {
+                const isProgramsActive = pathname.startsWith("/programs") || pathname === "/offerings";
+                return (
+                  <div
+                    key={link.href}
+                    className="relative py-2"
+                    onMouseEnter={() => {
+                      setHoveredIndex(idx);
+                      setProgramsDropdownOpen(true);
+                    }}
+                    onMouseLeave={() => {
+                      setProgramsDropdownOpen(false);
+                    }}
+                  >
+                    <button
+                      className={`relative py-2.5 px-4 transition-colors duration-300 hover:text-primary cursor-pointer whitespace-nowrap rounded-xl flex items-center gap-1 focus:outline-none ${
+                        isProgramsActive ? "text-primary font-bold" : "text-text-muted"
+                      }`}
+                    >
+                      {/* Gliding Hover capsule background */}
+                      {hoveredIndex === idx && (
+                        <motion.span
+                          layoutId="hoverNavIndicator"
+                          className="absolute inset-0 bg-primary/5 rounded-xl -z-10"
+                          transition={{ type: "spring", stiffness: 350, damping: 25 }}
+                        />
+                      )}
+                      <span>Programs</span>
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300" />
+                      
+                      {/* Active underline indicator */}
+                      {isProgramsActive && (
+                        <motion.span 
+                          layoutId="activeNavIndicator"
+                          className="absolute bottom-1.5 left-4 right-4 h-0.5 bg-primary rounded-full"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </button>
+
+                    {/* Dropdown Menu */}
+                    <AnimatePresence>
+                      {programsDropdownOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute top-full left-0 mt-1 w-64 bg-white border border-pink-100/60 rounded-2xl shadow-xl p-3 z-50 flex flex-col gap-1 text-xs"
+                        >
+                          {programs.map((program) => {
+                            const isProgramActive = pathname === program.href;
+                            return (
+                              <Link
+                                key={program.href}
+                                href={program.href}
+                                className={`px-4 py-2.5 rounded-xl hover:bg-primary/5 transition-colors text-left font-bold ${
+                                  isProgramActive ? "text-primary bg-primary/5" : "text-text-muted hover:text-primary"
+                                }`}
+                              >
+                                {program.name}
+                              </Link>
+                            );
+                          })}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               const isActive = pathname === link.href;
               return (
                 <Link 
@@ -201,6 +282,47 @@ export default function Header() {
                   className="flex flex-col gap-4 text-base font-bold text-text-main"
                 >
                   {navLinks.map((link) => {
+                    if (link.name === "Programs") {
+                      const isProgramsActive = pathname.startsWith("/programs") || pathname === "/offerings";
+                      return (
+                        <motion.div key={link.href} variants={drawerItemVariants} className="space-y-2">
+                          <button
+                            onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
+                            className={`w-full flex items-center justify-between py-1 text-left font-bold hover:text-primary transition-colors focus:outline-none ${
+                              isProgramsActive ? "text-primary pl-3 border-l-4 border-primary" : "text-text-muted pl-0"
+                            }`}
+                          >
+                            <span>Programs</span>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileProgramsOpen ? "rotate-180" : ""}`} />
+                          </button>
+
+                          <AnimatePresence>
+                            {mobileProgramsOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="overflow-hidden pl-4 flex flex-col gap-2.5 text-xs font-bold border-l border-pink-100/60"
+                              >
+                                {programs.map((program) => (
+                                  <Link
+                                    key={program.href}
+                                    href={program.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className={`block py-0.5 transition-colors ${
+                                      pathname === program.href ? "text-primary font-extrabold" : "text-text-muted hover:text-primary"
+                                    }`}
+                                  >
+                                    {program.name}
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </motion.div>
+                      );
+                    }
+                    
                     const isActive = pathname === link.href;
                     return (
                       <motion.div key={link.href} variants={drawerItemVariants}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   CheckCircle2, 
@@ -73,14 +74,14 @@ export default function Offerings() {
       id: "anti-aging-33",
       title: "33 Sessions",
       duration: "3 Month Plan",
-      price: formatPrice("anti-aging-33"),
+      price: "Pricing on Call",
       perks: "Includes customized morning/night drinks, supplements, skin care products, and yoga"
     },
     {
       id: "anti-aging-22",
       title: "22 Sessions",
       duration: "2 Month Plan",
-      price: formatPrice("anti-aging-22"),
+      price: "Pricing on Call",
       perks: "Includes full facial exercise, natural glow packs, and massage tools guides"
     },
     {
@@ -97,24 +98,24 @@ export default function Offerings() {
     {
       id: "meal-plan-silver",
       title: "Silver Tier",
-      price: formatPrice("meal-plan-silver"),
-      actualPrice: formatActualPrice("meal-plan-silver"),
+      price: "Pricing on Call",
+      actualPrice: "Pricing on Call",
       description: "Basic customized 90 days nutrition plan with standard support & weekly followups.",
       badge: "Popular"
     },
     {
       id: "meal-plan-gold",
       title: "Gold Tier",
-      price: formatPrice("meal-plan-gold"),
-      actualPrice: formatActualPrice("meal-plan-gold"),
+      price: "Pricing on Call",
+      actualPrice: "Pricing on Call",
       description: "Comprehensive 90 days nutrition, priority chat support, and natural cycle syncing blueprints.",
       badge: "Recommended"
     },
     {
       id: "meal-plan-platinum",
       title: "Platinum Tier",
-      price: formatPrice("meal-plan-platinum"),
-      actualPrice: formatActualPrice("meal-plan-platinum"),
+      price: "Pricing on Call",
+      actualPrice: "Pricing on Call",
       description: "Premium 90 days nutrition, 1-on-1 calls with Coach Garima, 24/7 priority support, cycle syncing & gut restoration guides.",
       badge: "Premium"
     }
@@ -125,7 +126,7 @@ export default function Offerings() {
     {
       id: "discovery-45",
       title: "Discovery Call (45 Mins)",
-      price: formatPrice("discovery-45"),
+      price: "Pricing on Call",
       description: "Our premium 1-on-1 diagnostic call to investigate structural blockages in your metabolism.",
       duration: "45 Minutes",
       format: "1-on-1 Google Meet / Phone Call",
@@ -142,7 +143,7 @@ export default function Offerings() {
     {
       id: "merchandise-book",
       title: "Text for Transformation",
-      price: formatPrice("merchandise-book"),
+      price: "Pricing on Call",
       description: "Our complete 7-Pillars lifestyle guide. Pre-order now to secure a copy with meal blueprints.",
       duration: "Digital Blueprint Guide",
       format: "Instant PDF / WhatsApp Delivery",
@@ -159,7 +160,7 @@ export default function Offerings() {
     {
       id: "discovery-30",
       title: "Discovery Call (30 Mins)",
-      price: formatPrice("discovery-30"),
+      price: "Pricing on Call",
       description: "A focused assessment call for women looking to resolve specific wellness concerns.",
       duration: "30 Minutes",
       format: "1-on-1 Phone Consultation",
@@ -279,10 +280,10 @@ export default function Offerings() {
               className="space-y-16"
             >
               
-              {/* Program 1: Yoga & Hybrid Session */}
+              {/* Program 1: GWG Yoga Program */}
               <section className="bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-pink-100 p-5 sm:p-8 md:p-12 shadow-premium hover:shadow-premium-hover transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative overflow-hidden">
                 <div className="absolute top-0 left-0 bg-primary text-white text-[9px] font-extrabold px-4 py-1.5 rounded-br-2xl uppercase tracking-wider">
-                  Yoga & Hybrid Batch
+                  Yoga Program Batch
                 </div>
                 
                 {/* Info and Personal Plan */}
@@ -292,8 +293,11 @@ export default function Offerings() {
                       <User className="w-3 h-3" /> Personal & Group Training
                     </span>
                     <h2 className="font-display font-extrabold text-2xl md:text-3xl text-primary">
-                      GWG Yoga & Hybrid Sessions
+                      GWG Yoga Program
                     </h2>
+                    <Link href="/programs/yoga-hybrid" className="text-xs text-primary font-bold hover:underline inline-flex items-center gap-1 mt-1">
+                      Explore Program Details & Learn More →
+                    </Link>
                     <p className="text-xs text-text-muted leading-relaxed font-bold">
                       A hybrid fitness routine combining traditional yoga, calorie-burning routines, and mental peace. Perfectly designed for fat loss, metabolic balance, and stress relief.
                     </p>
@@ -320,13 +324,13 @@ export default function Offerings() {
                         <h4 className="font-bold text-text-main text-sm">YOU AND YOUR MENTOR ONLY</h4>
                       </div>
                       <div className="text-right">
-                        <span className="text-xs text-text-muted line-through block">{formatActualPrice("yoga-hybrid-personal")}</span>
-                        <span className="font-display font-extrabold text-2xl text-primary">{formatPrice("yoga-hybrid-personal")}</span>
+                        <span className="font-display font-bold text-base text-primary">Pricing on Call</span>
+                        <span className="text-[10px] text-text-muted font-semibold block">Available on Consultation</span>
                       </div>
                     </div>
                     
                     <div className="flex items-center justify-between border-t border-pink-100/40 pt-4">
-                      <span className="text-xs text-text-muted font-bold">Monthly breakdown: <strong className="text-primary">{currency === "USD" ? "$25/mo" : "₹2,500/mo"}</strong></span>
+                      <span className="text-[10px] text-text-muted font-bold">Installment options available</span>
                       <button 
                         onClick={() => openBooking("yoga-hybrid-personal")}
                         className="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white rounded-lg text-xs font-bold uppercase tracking-wider cursor-pointer shadow transition-all"
@@ -412,7 +416,7 @@ export default function Offerings() {
                 </div>
               </section>
 
-              {/* Program 2: Hybrid Sessions (Online Only) */}
+              {/* Program 2: Online Hybrid Sessions */}
               <section className="bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-pink-100 p-5 sm:p-8 md:p-12 shadow-premium hover:shadow-premium-hover transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative overflow-hidden">
                 <div className="absolute top-0 left-0 bg-[#00A8E8] text-white text-[9px] font-extrabold px-4 py-1.5 rounded-br-2xl uppercase tracking-wider">
                   Complete Transformation Batch
@@ -426,6 +430,9 @@ export default function Offerings() {
                     <h2 className="font-display font-extrabold text-2xl md:text-3xl text-secondary">
                       Online Hybrid Sessions
                     </h2>
+                    <Link href="/programs/online-hybrid" className="text-xs text-secondary font-bold hover:underline inline-flex items-center gap-1 mt-1">
+                      Explore Program Details & Learn More →
+                    </Link>
                     <p className="text-xs text-text-muted leading-relaxed font-bold">
                       A complete transformation package combining Yoga with strength building, breath control, core training, and deep relaxation. Designed to build functional strength and balance cortisol.
                     </p>
@@ -459,7 +466,7 @@ export default function Offerings() {
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[10px] font-bold text-text-main">
                       {["Weighted Strength", "Conscious Breathing", "Restorative Stretch", "Hormonal Yoga", "Pilates Core", "Guided Meditation", "Yog Nidra Sleep"].map((pillar, i) => (
                         <div key={i} className="flex items-center gap-1.5 p-2 bg-[#FCF9FB] border border-pink-100/40 rounded-lg">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" />
+                           <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" />
                           {pillar}
                         </div>
                       ))}
@@ -471,43 +478,41 @@ export default function Offerings() {
                     <span className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 block mb-3">Select Pricing Tier</span>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {/* 1 Month */}
-                      <div className="bg-zinc-50/70 border border-zinc-200 p-4 rounded-2xl text-center flex flex-col justify-between opacity-85 relative">
-                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-zinc-500 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase shadow-sm">Sold Out</span>
+                      <div className="bg-white border border-secondary/20 p-4 rounded-2xl text-center flex flex-col justify-between hover:border-secondary transition-all relative">
+                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shadow-sm">Slots Open</span>
                         <div>
                           <span className="text-[9px] font-extrabold text-zinc-400 uppercase tracking-wide block">1 Month</span>
                           <span className="font-display font-extrabold text-lg text-secondary block mt-1">{formatPrice("hybrid-sessions-1")}</span>
                         </div>
                         <button
-                          disabled
-                          className="mt-3 w-full py-2 bg-zinc-200 text-zinc-400 rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-not-allowed"
+                          onClick={() => openBooking("hybrid-sessions-1")}
+                          className="mt-3 w-full py-2 bg-[#00A8E8] hover:bg-blue-600 text-white rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-pointer"
                         >
-                          Closed
+                          Book Now
                         </button>
                       </div>
                       
                       {/* 3 Months */}
-                      <div className="bg-zinc-50/70 border border-zinc-200 p-4 rounded-2xl text-center flex flex-col justify-between opacity-85 relative">
-                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-zinc-500 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase shadow-sm">Sold Out</span>
+                      <div className="bg-white border border-secondary/20 p-4 rounded-2xl text-center flex flex-col justify-between hover:border-secondary transition-all relative">
+                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shadow-sm">Slots Open</span>
                         <div>
                           <span className="text-[9px] font-extrabold text-zinc-400 uppercase tracking-wide block">3 Months</span>
-                          <span className="text-[9px] text-text-muted line-through block mt-1">{formatActualPrice("hybrid-sessions-3")}</span>
-                          <span className="font-display font-extrabold text-lg text-secondary block">{formatPrice("hybrid-sessions-3")}</span>
+                          <span className="font-display font-bold text-sm text-primary block mt-2">Pricing on Call</span>
                         </div>
                         <button
-                          disabled
-                          className="mt-3 w-full py-2 bg-zinc-200 text-zinc-400 rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-not-allowed"
+                          onClick={() => openBooking("hybrid-sessions-3")}
+                          className="mt-3 w-full py-2 bg-[#00A8E8] hover:bg-blue-600 text-white rounded-lg text-[10px] font-bold uppercase tracking-wider cursor-pointer"
                         >
-                          Closed
+                          Book Now
                         </button>
                       </div>
  
                       {/* 6 Months */}
                       <div className="bg-white border-2 border-secondary/20 p-4 rounded-2xl text-center flex flex-col justify-between hover:border-secondary transition-all relative">
-                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shadow-sm">10 Slots Open</span>
+                        <span className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-emerald-600 text-white text-[8px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse shadow-sm">Slots Open</span>
                         <div>
                           <span className="text-[9px] font-extrabold text-zinc-400 uppercase tracking-wide block">6 Months</span>
-                          <span className="text-[9px] text-text-muted line-through block mt-1">{formatActualPrice("hybrid-sessions-6")}</span>
-                          <span className="font-display font-extrabold text-lg text-secondary block">{formatPrice("hybrid-sessions-6")}</span>
+                          <span className="font-display font-bold text-sm text-primary block mt-2">Pricing on Call</span>
                         </div>
                         <button
                           onClick={() => openBooking("hybrid-sessions-6")}
@@ -521,7 +526,7 @@ export default function Offerings() {
                 </div>
               </section>
 
-              {/* Program 3: Anti-Aging Summer Offer */}
+              {/* Program 3: GWG Anti-Aging Offer */}
               <section className="bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-pink-100 p-5 sm:p-8 md:p-12 shadow-premium hover:shadow-premium-hover transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative overflow-hidden">
                 <div className="absolute top-0 left-0 bg-[#FBC02D] text-text-main text-[9px] font-extrabold px-4 py-1.5 rounded-br-2xl uppercase tracking-wider">
                   Skin & Face Yoga Special
@@ -536,6 +541,9 @@ export default function Offerings() {
                     <h2 className="font-display font-extrabold text-2xl md:text-3xl text-primary">
                       GWG Anti-Aging Offer
                     </h2>
+                    <Link href="/programs/anti-aging" className="text-xs text-primary font-bold hover:underline inline-flex items-center gap-1 mt-1">
+                      Explore Program Details & Learn More →
+                    </Link>
                     <p className="text-xs text-text-muted leading-relaxed font-bold">
                       A complete facial exercise and skin healing batch designed to enhance blood circulation, release face muscle tension, and restore organic glow. Time: 8:40 PM - 9:40 PM (Thursdays & Sundays off).
                     </p>
@@ -593,13 +601,13 @@ export default function Offerings() {
                       onClick={() => openBooking(faceYogaPlans[faceYogaPlan].id)}
                       className="w-full py-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer shadow transition-all"
                     >
-                      Book Facial Batch: {faceYogaPlans[faceYogaPlan].price}
+                      Book Facial Batch {faceYogaPlans[faceYogaPlan].price !== "Pricing on Call" ? `: ${faceYogaPlans[faceYogaPlan].price}` : ""}
                     </button>
                   </div>
                 </div>
               </section>
 
-              {/* Program 4: Only Meal Plan (90 Days / 3 Months) */}
+              {/* Program 4: Complete Meal Plan */}
               <section className="bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-pink-100 p-5 sm:p-8 md:p-12 shadow-premium hover:shadow-premium-hover transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative overflow-hidden">
                 <div className="absolute top-0 left-0 bg-accent text-white text-[9px] font-extrabold px-4 py-1.5 rounded-br-2xl uppercase tracking-wider">
                   Hormonal & Nutrition Plan
@@ -617,8 +625,11 @@ export default function Offerings() {
                       </span>
                     </div>
                     <h2 className="font-display font-extrabold text-2xl md:text-3xl text-primary">
-                      Glow Meal Plan - 90 Days
+                      Complete Meal Plan
                     </h2>
+                    <Link href="/programs/meal-plan" className="text-xs text-primary font-bold hover:underline inline-flex items-center gap-1 mt-1">
+                      Explore Program Details & Learn More →
+                    </Link>
                     <p className="text-xs text-text-muted leading-relaxed font-bold">
                       A personalized, home-cooked food blueprint designed to target fat loss blocks, thyroid optimization, and PCOD/PCOS recovery. No starvation. Basic home groceries only.
                     </p>
@@ -663,9 +674,6 @@ export default function Offerings() {
                             <span className="text-[9px] text-text-muted block mt-0.5">{option.badge}</span>
                           </div>
                           <div className="text-right">
-                            {option.price !== option.actualPrice && (
-                              <span className="text-[10px] text-text-muted line-through block">{option.actualPrice}</span>
-                            )}
                             <span className="font-display font-bold text-sm text-primary">{option.price}</span>
                           </div>
                         </button>
@@ -684,7 +692,7 @@ export default function Offerings() {
                       }}
                       className="w-full py-3.5 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer shadow transition-all"
                     >
-                      Book Meal Plan: {mealPlanOptions[mealPlanOption]?.price || ""}
+                      Book Meal Plan {mealPlanOptions[mealPlanOption]?.price !== "Pricing on Call" ? `: ${mealPlanOptions[mealPlanOption]?.price}` : ""}
                     </button>
                     <p className="text-[9px] text-[#75B043] font-bold text-center mt-2 uppercase tracking-wide">
                       Offers and pricing are available in group and community. Start your journey with a token amount + installments.
@@ -708,6 +716,9 @@ export default function Offerings() {
                     <h2 className="font-display font-extrabold text-2xl md:text-3xl text-primary-dark">
                       Complete Hair Solution
                     </h2>
+                    <Link href="/programs/hair-solution" className="text-xs text-primary-dark font-bold hover:underline inline-flex items-center gap-1 mt-1">
+                      Explore Program Details & Learn More →
+                    </Link>
                     <p className="text-xs text-text-muted leading-relaxed font-bold">
                       Anti-ageing hair batch focused on reversing dryness, minimizing hair fall, reversing graying trends, and restoring smooth textures naturally. Total 9 Sessions.
                     </p>
@@ -752,7 +763,7 @@ export default function Offerings() {
                     <span className="inline-block bg-pink-100 text-primary font-bold text-[10px] px-3.5 py-1 rounded-full uppercase tracking-wider">
                       Anti-Ageing Hair Batch
                     </span>
-                    <h3 className="font-display font-extrabold text-3xl text-primary-dark">{formatPrice("hair-solution")}</h3>
+                    <h3 className="font-display font-extrabold text-2xl text-primary-dark">Pricing on Call</h3>
                     <p className="text-xs text-text-muted font-bold">Comprehensive 9-session botanical care system.</p>
                     <span className="inline-block bg-accent/10 text-accent font-extrabold text-[9px] px-2.5 py-1 rounded uppercase tracking-wider animate-pulse shadow-sm">
                       Includes Brand Secret Oils & Remedies
@@ -813,11 +824,11 @@ export default function Offerings() {
                       </div>
 
                       <div className="flex items-baseline gap-1">
-                        <span className={`font-display font-extrabold text-4xl ${isFeatured ? "text-white" : "text-primary"}`}>
+                        <span className={`font-display font-extrabold ${program.price === "Pricing on Call" ? "text-2xl" : "text-4xl"} ${isFeatured ? "text-white" : "text-primary"}`}>
                           {program.price}
                         </span>
-                        {!isFeatured && <span className="text-xs text-text-muted">/ session</span>}
-                        {isFeatured && <span className="text-xs text-white/50 line-through ml-2">{formatActualPrice("merchandise-book")}</span>}
+                        {!isFeatured && program.price !== "Pricing on Call" && <span className="text-xs text-text-muted">/ session</span>}
+                        {isFeatured && program.price !== "Pricing on Call" && <span className="text-xs text-white/50 line-through ml-2">{formatActualPrice("merchandise-book")}</span>}
                       </div>
 
                       <p className={`text-xs leading-relaxed ${isFeatured ? "text-white/80" : "text-text-muted font-bold"}`}>
