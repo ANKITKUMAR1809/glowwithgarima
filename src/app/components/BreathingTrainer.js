@@ -134,6 +134,16 @@ export default function BreathingTrainer({ onBookConsultation }) {
     }
   };
 
+  const getPhaseColor = () => {
+    switch (phase) {
+      case "inhale": return "rgba(241, 91, 181, 0.25)";
+      case "hold1": return "rgba(0, 168, 232, 0.25)";
+      case "exhale": return "rgba(251, 192, 45, 0.25)";
+      case "hold2": return "rgba(117, 176, 67, 0.25)";
+      default: return "rgba(214, 51, 132, 0.15)";
+    }
+  };
+
   return (
     <div className="bg-white rounded-[2rem] sm:rounded-[2.5rem] border border-pink-100 p-5 sm:p-8 md:p-12 shadow-premium max-w-2xl mx-auto space-y-6 sm:space-y-8 relative overflow-hidden">
       {/* Decorative SVG Lotus in background */}
@@ -188,6 +198,20 @@ export default function BreathingTrainer({ onBookConsultation }) {
             <div key="game" className="flex flex-col items-center justify-center space-y-8">
               {/* Breathing Bubble */}
               <div className="relative w-32 h-32 sm:w-40 sm:h-40 flex items-center justify-center">
+                {/* Radiating concentric ripples when active */}
+                {isActive && (
+                  <>
+                    <div 
+                      className="absolute rounded-full w-20 h-20 sm:w-24 sm:h-24 animate-ripple pointer-events-none"
+                      style={{ border: `1px solid ${getPhaseColor()}`, backgroundColor: getPhaseColor() }}
+                    />
+                    <div 
+                      className="absolute rounded-full w-20 h-20 sm:w-24 sm:h-24 animate-ripple-delayed pointer-events-none"
+                      style={{ border: `1px solid ${getPhaseColor()}`, backgroundColor: getPhaseColor() }}
+                    />
+                  </>
+                )}
+
                 <motion.div
                   animate={getBubbleStyle()}
                   transition={{

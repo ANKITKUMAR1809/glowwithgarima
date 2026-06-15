@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   ArrowRight, 
   Heart, 
@@ -32,10 +32,10 @@ export default function Home() {
   const [lightboxImage, setLightboxImage] = useState(null);
 
   return (
-    <div className="space-y-32 pb-32 bg-grid-pattern glow-mesh relative overflow-hidden">
+    <div className="bg-grid-pattern glow-mesh relative overflow-hidden">
       <FloatingSvgAnimation />
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-12 pb-20 md:py-28">
+      <section className="relative overflow-hidden py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Hero Text */}
@@ -64,10 +64,11 @@ export default function Home() {
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsBookingOpen(true)}
-                className="px-8 py-4.5 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl text-sm transition-all shadow-premium cursor-pointer flex items-center justify-center gap-2 group"
+                className="px-8 py-4.5 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl text-sm transition-all shadow-premium hover:shadow-primary/25 cursor-pointer flex items-center justify-center gap-2 group btn-shine-container relative overflow-hidden"
               >
-                Book Discovery Call
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <div className="btn-shine-overlay" />
+                <span className="relative z-10">Book Discovery Call</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform relative z-10" />
               </motion.button>
               <Link
                 href="/offerings"
@@ -157,10 +158,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mentor and Book Group */}
-      <div className="space-y-16">
-        {/* Meet Garima Short Preview */}
-        <section className="max-w-7xl mx-auto px-6">
+      {/* Meet Garima Short Preview */}
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
           <div className="bg-white rounded-[2.5rem] md:rounded-[3.5rem] border border-pink-100/50 shadow-premium p-6 md:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-5 relative w-full aspect-[4/5] md:aspect-square lg:aspect-[3/4] rounded-3xl overflow-hidden shadow-lg border border-pink-100/30">
@@ -198,10 +197,9 @@ export default function Home() {
 
         {/* Featured Book Section */}
         <BookShowcase />
-      </div>
 
       {/* 7 Pillars Short Preview */}
-      <section className="max-w-7xl mx-auto px-6 space-y-16">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 space-y-16">
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs font-bold uppercase tracking-wider text-secondary">Our Methodology</span>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-primary">The 7 Pillars Blueprint</h2>
@@ -224,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Real Results — Scrolling Transformation Gallery */}
-      <section className="py-20 border-y border-pink-100/30 relative overflow-hidden">
+      <section className="py-16 md:py-24 border-y border-pink-100/30 relative overflow-hidden">
         {/* Decorative SVG background with animated rotating mandalas */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.05]" viewBox="0 0 1200 500">
           <defs>
@@ -329,7 +327,7 @@ export default function Home() {
 
 
       {/* YouTube Shorts Showcase */}
-      <section className="max-w-7xl mx-auto px-6 space-y-12">
+      <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 space-y-12">
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs font-bold uppercase tracking-wider text-[#00A8E8]">Wellness in Action</span>
           <h2 className="font-display font-extrabold text-3xl md:text-4xl text-primary">Daily Glow Insights & Shorts</h2>
@@ -373,10 +371,12 @@ export default function Home() {
       </section>
 
       {/* Breathing Trainer game instead of pre-booking banner */}
-      <section className="py-8 space-y-12">
+      <section className="py-16 md:py-24">
         <BreathingTrainer onBookConsultation={() => setIsBookingOpen(true)} />
+      </section>
 
-        {/* Scrolling text reviews — Healing Feedback */}
+      {/* Scrolling text reviews — Healing Feedback */}
+      <section className="py-16 md:py-24 border-y border-pink-100/30 bg-gradient-to-br from-white/60 via-pink-50/20 to-white/60 relative overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-8 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -408,7 +408,7 @@ export default function Home() {
                   ].map((review, idx) => (
                     <div 
                       key={idx} 
-                      className="w-[420px] bg-white p-8 rounded-[1.5rem] border border-pink-100/40 shadow-md flex flex-col justify-between shrink-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+                      className="w-[290px] sm:w-[360px] md:w-[420px] bg-white p-5 sm:p-8 rounded-[1.5rem] border border-pink-100/40 shadow-md flex flex-col justify-between shrink-0 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
                     >
                       {/* Decorative quote SVG */}
                       <svg className="absolute top-4 left-6 w-10 h-10 opacity-[0.06] pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
@@ -416,28 +416,28 @@ export default function Home() {
                       </svg>
 
                       {/* Tag badge */}
-                      <div className="mb-4">
+                      <div className="mb-3 sm:mb-4">
                         <span className="text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-pink-50 text-primary border border-pink-100/50">
                           {review.tag}
                         </span>
                       </div>
 
-                      <p className="text-base text-text-muted italic leading-relaxed font-semibold flex-1">
+                      <p className="text-sm sm:text-base text-text-muted italic leading-relaxed font-semibold flex-1">
                         &ldquo;{review.text}&rdquo;
                       </p>
 
-                      <div className="flex items-center gap-3 mt-6 pt-5 border-t border-pink-50">
+                      <div className="flex items-center gap-3 mt-4 pt-4 sm:mt-6 sm:pt-5 border-t border-pink-50">
                         {/* Avatar circle */}
-                        <div className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-extrabold text-sm shadow-md">
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-extrabold text-xs sm:text-sm shadow-md">
                           {review.name.charAt(0)}
                         </div>
                         <div className="flex-1">
-                          <span className="text-sm font-bold text-text-main block">{review.name}</span>
-                          <span className="text-xs text-text-muted font-semibold">{review.location}</span>
+                          <span className="text-xs sm:text-sm font-bold text-text-main block">{review.name}</span>
+                          <span className="text-[10px] sm:text-xs text-text-muted font-semibold">{review.location}</span>
                         </div>
-                        <div className="flex items-center gap-1 text-amber-400">
+                        <div className="flex items-center gap-0.5 text-amber-400">
                           {[...Array(5)].map((_, starIdx) => (
-                            <Star key={starIdx} className="w-4 h-4 fill-current" />
+                            <Star key={starIdx} className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
                           ))}
                         </div>
                       </div>
@@ -457,35 +457,41 @@ export default function Home() {
       />
 
       {/* Image Lightbox Modal */}
-      {lightboxImage && (
-        <div 
-          className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setLightboxImage(null)}
-        >
-          <button 
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer"
             onClick={() => setLightboxImage(null)}
-            className="absolute top-6 right-6 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer"
           >
-            <X className="w-6 h-6" />
-          </button>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.85 }}
-            transition={{ duration: 0.25 }}
-            className="relative w-full max-w-lg max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src={lightboxImage}
-              width={600}
-              height={800}
-              alt="Enlarged transformation result"
-              className="w-full h-auto object-contain rounded-3xl"
-            />
+            <button 
+              onClick={() => setLightboxImage(null)}
+              className="absolute top-6 right-6 z-10 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors cursor-pointer"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.85, y: 30 }}
+              transition={{ type: "spring", damping: 25, stiffness: 220 }}
+              className="relative w-full max-w-lg max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={lightboxImage}
+                width={600}
+                height={800}
+                alt="Enlarged transformation result"
+                className="w-full h-auto object-contain rounded-3xl"
+              />
+            </motion.div>
           </motion.div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </div>
   );
 }

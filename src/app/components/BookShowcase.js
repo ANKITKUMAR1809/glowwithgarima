@@ -41,7 +41,7 @@ export default function BookShowcase() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-6 relative py-12">
+    <section className="max-w-7xl mx-auto px-6 relative py-16 md:py-24">
       {/* Background ambient glows */}
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-secondary/5 to-transparent rounded-[3.5rem] blur-3xl -z-10" />
 

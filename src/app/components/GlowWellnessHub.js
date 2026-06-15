@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { 
   Sparkles, 
   Droplet, 
@@ -172,7 +173,7 @@ export default function GlowWellnessHub({ onOpenBooking }) {
   const bmiCat = getBmiCategory();
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12 relative">
+    <section className="max-w-7xl mx-auto px-6 py-16 md:py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-secondary/5 to-transparent rounded-[3.5rem] blur-3xl -z-10 animate-pulse" />
 
       {/* Main Glassmorphic Container */}
@@ -197,40 +198,35 @@ export default function GlowWellnessHub({ onOpenBooking }) {
         </div>
 
         {/* Dashboard Tab Selectors */}
-        <div className="grid grid-cols-3 gap-1 p-1 bg-warm-bg rounded-2xl max-w-md mx-auto mb-10 border border-pink-100/40 w-full">
-          <button
-            onClick={() => setActiveTab("BREATH")}
-            className={`py-2 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-all flex flex-col sm:flex-row items-center justify-center gap-1 text-center ${
-              activeTab === "BREATH" 
-                ? "bg-primary text-white shadow-md" 
-                : "text-text-muted hover:text-primary"
-            }`}
-          >
-            <Wind className="w-3.5 h-3.5 shrink-0" />
-            <span>Breath Flow</span>
-          </button>
-          <button
-            onClick={() => setActiveTab("HYDRATION")}
-            className={`py-2 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-all flex flex-col sm:flex-row items-center justify-center gap-1 text-center ${
-              activeTab === "HYDRATION" 
-                ? "bg-primary text-white shadow-md" 
-                : "text-text-muted hover:text-primary"
-            }`}
-          >
-            <Droplet className="w-3.5 h-3.5 shrink-0" />
-            <span>Hydration</span>
-          </button>
-          <button
-            onClick={() => setActiveTab("WEIGHT")}
-            className={`py-2 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-all flex flex-col sm:flex-row items-center justify-center gap-1 text-center ${
-              activeTab === "WEIGHT" 
-                ? "bg-primary text-white shadow-md" 
-                : "text-text-muted hover:text-primary"
-            }`}
-          >
-            <Scale className="w-3.5 h-3.5 shrink-0" />
-            <span>Smart Weight</span>
-          </button>
+        <div className="grid grid-cols-3 gap-1.5 p-1 bg-warm-bg rounded-2xl max-w-md mx-auto mb-10 border border-pink-100/40 w-full relative z-10">
+          {[
+            { id: "BREATH", label: "Breath Flow", icon: Wind },
+            { id: "HYDRATION", label: "Hydration", icon: Droplet },
+            { id: "WEIGHT", label: "Smart Weight", icon: Scale }
+          ].map((tab) => {
+            const isActive = activeTab === tab.id;
+            const TabIcon = tab.icon;
+            
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`relative py-2.5 px-1 rounded-xl text-[9px] sm:text-xs font-extrabold uppercase tracking-wider cursor-pointer transition-colors duration-300 flex flex-col sm:flex-row items-center justify-center gap-1.5 text-center ${
+                  isActive ? "text-white" : "text-text-muted hover:text-primary"
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="activeDashboardTab"
+                    className="absolute inset-0 bg-primary rounded-xl -z-10 shadow-md"
+                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
+                  />
+                )}
+                <TabIcon className="w-3.5 h-3.5 shrink-0" />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* ==========================================

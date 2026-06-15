@@ -28,9 +28,9 @@ export default function Header() {
     { name: "Home", href: "/" },
     { name: "About Me", href: "/about" },
     { name: "7 Pillars", href: "/pillars" },
-    { name: "Testimonials", href: "/gallery" },
+    { name: "Transformations", href: "/gallery" },
     { name: "Programs", href: "/offerings" },
-    { name: "Reviews", href: "/testimonials" },
+    { name: "Testimonials", href: "/testimonials" },
   ];
 
   // Drawer Stagger Variants
@@ -136,13 +136,12 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Right Desktop CTA booking trigger */}
           <div className="hidden lg:flex items-center gap-4">
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setIsBookingOpen(true)}
-              className="px-5 py-2.5 bg-gradient-to-r from-primary to-primary-light text-white font-extrabold rounded-xl text-xs uppercase tracking-widest shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center gap-2"
+              className="px-5 py-2.5 bg-gradient-to-r from-primary to-primary-light text-white font-extrabold rounded-xl text-xs uppercase tracking-widest shadow-md hover:shadow-lg hover:shadow-primary/30 transition-all cursor-pointer flex items-center gap-2"
             >
               <Phone className="w-3.5 h-3.5 fill-current" />
               <span>Book Call</span>
