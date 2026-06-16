@@ -135,7 +135,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     "hybrid-sessions-1": {
       title: "Online Hybrid Sessions: 1 Month",
       price: formatPrice("hybrid-sessions-1"),
-      description: "Exclusively for females. 12 Hybrid Sessions (Wed, Fri, Sun at 8:30 AM).",
+      description: "Exclusively for females. 5 Days a week (Mon, Tue, Wed, Fri, Sat) - Morning & Evening batches.",
       type: "Online Session",
       duration: "1 Month",
       icon: Heart
@@ -143,7 +143,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     "hybrid-sessions-3": {
       title: "Online Hybrid Sessions: 3 Months",
       price: "Pricing on Call",
-      description: "Exclusively for females. 36 Hybrid Sessions (Wed, Fri, Sun at 8:30 AM).",
+      description: "Exclusively for females. 5 Days a week (Mon, Tue, Wed, Fri, Sat) - Morning & Evening batches.",
       type: "Online Session",
       duration: "3 Months",
       icon: Heart
@@ -151,7 +151,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     "hybrid-sessions-6": {
       title: "Online Hybrid Sessions: 6 Months",
       price: "Pricing on Call",
-      description: "Exclusively for females. 72 Hybrid Sessions (Wed, Fri, Sun at 8:30 AM).",
+      description: "Exclusively for females. 5 Days a week (Mon, Tue, Wed, Fri, Sat) - Morning & Evening batches.",
       type: "Online Session",
       duration: "6 Months",
       icon: Heart

@@ -28,7 +28,7 @@ const programData = {
     description: "A hybrid fitness routine combining traditional yoga, calorie-burning routines, and mental peace. Exclusively designed for females for fat loss, metabolic balance, and stress relief.",
     targetAreas: ["Fat Loss", "Hormonal Balance", "Core Strength", "Joint Flexibility"],
     duration: "6 Months Personal Plan or Monthly Group Batches",
-    timing: "Personal Plan: Flexible customized timings. Group Batch: Wed, Fri, Sun at 8:30 AM (7-day trial available)",
+    timing: "Personal Plan: Flexible customized timings. Group Batch: 5 Days a week (Mon, Tue, Wed, Fri, Sat) - Morning & Evening Batches (7-day trial available)",
     inclusions: [
       "Customized 1-on-1 Mentor Sessions (Personal)",
       "Calorie-Burning Yoga & Body Toning Sequences",
@@ -69,7 +69,7 @@ const programData = {
     description: "A complete online transformation package combining Yoga with strength building, breath control, core training, and deep relaxation. Designed to build functional strength and balance cortisol.",
     targetAreas: ["Functional Strength", "Cortisol Control", "Cardiovascular Health", "Restorative Stretches"],
     duration: "1 Month, 3 Months, or 6 Months",
-    timing: "Live group classes run 12 sessions a month on Wednesday, Friday, and Sunday at 8:30 AM. Timings are kept flexible to accommodate you.",
+    timing: "Live group classes run 5 days a week (Mon, Tue, Wed, Fri, Sat) with both Morning & Evening batches. (Personal yoga sessions are also available)",
     inclusions: [
       "12 Live Interactive Sessions / Month",
       "Weighted Strength & Resistance Drills",
