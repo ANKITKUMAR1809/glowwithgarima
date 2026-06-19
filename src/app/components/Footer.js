@@ -128,7 +128,40 @@ export default function Footer() {
 
       {/* Copyright footer bar */}
       <div className="max-w-7xl mx-auto px-6 border-t border-zinc-100 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-text-muted font-bold">
-        <span>© {new Date().getFullYear()} Glow With Garima. All rights reserved.</span>
+        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 text-center sm:text-left">
+          <span>© {new Date().getFullYear()} Glow With Garima. All rights reserved.</span>
+          <span className="hidden sm:inline text-zinc-300">•</span>
+          <span className="flex items-center gap-1 flex-wrap justify-center">
+            <span>Powered by</span>
+            <a 
+              href="https://algobridgeinfotech.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-primary hover:text-primary-dark transition-colors font-extrabold hover:underline"
+            >
+              ALGOBRIDGE INFOTECH PVT LTD
+            </a>
+            <span className="text-zinc-400 font-normal ml-0.5">(</span>
+            <a 
+              href="https://wa.me/918102761121" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-[#25D366] hover:text-[#20ba5a] transition-colors font-extrabold hover:underline"
+            >
+              WhatsApp
+            </a>
+            <span className="text-zinc-400 font-normal">|</span>
+            <a 
+              href="https://algobridgeinfotech.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-secondary hover:text-secondary-dark transition-colors font-extrabold hover:underline"
+            >
+              Website
+            </a>
+            <span className="text-zinc-400 font-normal">)</span>
+          </span>
+        </div>
         <div className="flex gap-6">
           <span>Certified Holistic Health Specialist</span>
           <span>•</span>

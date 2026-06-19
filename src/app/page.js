@@ -26,6 +26,7 @@ import TickerBanner from "./components/TickerBanner";
 import GlowWellnessHub from "./components/GlowWellnessHub";
 import PillarWheel from "./components/PillarWheel";
 import FloatingSvgAnimation from "./components/FloatingSvgAnimation";
+import PodcastPlayer from "./components/PodcastPlayer";
 
 const credentials = [
   {
@@ -258,15 +259,11 @@ export default function Home() {
             >
               <div className="absolute -right-6 -bottom-6 w-24 h-24 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               <div>
-                <span className="absolute top-6 right-6 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full bg-zinc-50 border border-zinc-100 text-zinc-500">
-                  {cred.year}
-                </span>
-
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center border shadow-sm ${cred.badgeColor} mb-6 transition-all duration-300 group-hover:rotate-3`}>
                   {cred.svg}
                 </div>
 
-                <h3 className="font-display font-extrabold text-lg text-primary leading-snug pr-12">
+                <h3 className="font-display font-extrabold text-lg text-primary leading-snug">
                   {cred.title}
                 </h3>
               </div>
@@ -455,6 +452,25 @@ export default function Home() {
           <p className="text-text-muted text-sm font-semibold max-w-xl mx-auto">
             Watch quick breathing techniques, workout routines, nutrition tips, and transformation highlights directly from Coach Garima.
           </p>
+        </div>
+
+        {/* Podcast Section */}
+        <div className="max-w-5xl mx-auto space-y-6">
+          <div className="flex items-center gap-4">
+            <span className="text-xs font-extrabold uppercase tracking-wider text-[#E68A65] bg-pink-50/50 px-3 py-1.5 rounded-full border border-pink-100/50">
+              Podcast
+            </span>
+            <div className="h-px flex-1 bg-gradient-to-r from-pink-100/40 via-transparent to-transparent" />
+          </div>
+          <PodcastPlayer src="/podcast.mp4" />
+        </div>
+
+        {/* YouTube Shorts Grid Title */}
+        <div className="max-w-5xl mx-auto flex items-center gap-4 pt-4">
+          <span className="text-xs font-extrabold uppercase tracking-wider text-[#00A8E8] bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">
+            Daily Glow Shorts
+          </span>
+          <div className="h-px flex-1 bg-gradient-to-r from-blue-100/40 via-transparent to-transparent" />
         </div>
 
         {/* Video Player Grid */}
