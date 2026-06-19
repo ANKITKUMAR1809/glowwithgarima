@@ -7,6 +7,7 @@ import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import Footer from "./components/Footer";
 import FloatingSocials from "./components/FloatingSocials";
 import { CurrencyProvider } from "./context/CurrencyContext";
+import Script from "next/script";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -44,6 +45,21 @@ export default function RootLayout({ children }) {
           </main>
           <Footer />
           <FloatingWhatsApp />
+
+          {/* Google Analytics */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-D9GYP8RP25"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-D9GYP8RP25');
+            `}
+          </Script>
         </CurrencyProvider>
       </body>
     </html>
