@@ -8,7 +8,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
   const [isActive, setIsActive] = useState(false);
   const [phase, setPhase] = useState("idle"); // "idle", "inhale", "hold1", "exhale", "hold2", "complete"
   const [phaseTimer, setPhaseTimer] = useState(4);
-  const [totalTimer, setTotalTimer] = useState(60); // 60s total duration
+  const [totalTimer, setTotalTimer] = useState(17); // 17s total duration
   const [completedCycles, setCompletedCycles] = useState(0);
 
   const timerRef = useRef(null);
@@ -71,7 +71,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
     setIsActive(true);
     setPhase("inhale");
     setPhaseTimer(4);
-    setTotalTimer(60);
+    setTotalTimer(17);
     setCompletedCycles(0);
   };
 
@@ -79,7 +79,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
     setIsActive(false);
     setPhase("idle");
     setPhaseTimer(4);
-    setTotalTimer(60);
+    setTotalTimer(17);
   };
 
   // Get dynamic phase instruction text
@@ -162,7 +162,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
           Mindful Box Breathing Game
         </h3>
         <p className="text-xs text-text-muted max-w-md mx-auto leading-relaxed font-bold">
-          High cortisol levels block fat loss. Take 1 minute to lower your stress, sync your breathing, and reset your endocrine balance instantly.
+          High cortisol levels block fat loss. Take 17 seconds to lower your stress, sync your breathing, and reset your endocrine balance instantly.
         </p>
       </div>
 
@@ -183,7 +183,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
               <div className="space-y-1">
                 <h4 className="font-display font-extrabold text-lg text-primary">Endorphins Unlocked!</h4>
                 <p className="text-xs text-text-muted font-bold leading-relaxed">
-                  Congratulations! You completed the 1-minute box breathing session. Your cortisol levels have decreased, laying a healthy foundation for metabolic success.
+                  Congratulations! You completed the 17-second box breathing session. Your cortisol levels have decreased, laying a healthy foundation for metabolic success.
                 </p>
               </div>
               <button
@@ -302,7 +302,7 @@ export default function BreathingTrainer({ onBookConsultation }) {
               <motion.div 
                 className="h-full bg-primary"
                 initial={{ width: "100%" }}
-                animate={{ width: `${(totalTimer / 60) * 100}%` }}
+                animate={{ width: `${(totalTimer / 17) * 100}%` }}
                 transition={{ duration: 1, ease: "linear" }}
               />
             </div>
