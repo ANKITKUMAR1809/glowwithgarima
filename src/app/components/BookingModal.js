@@ -39,53 +39,53 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
     "demo-yoga-hybrid": {
       title: "Free Demo: GWG Yoga Program",
       price: "Free",
-      description: "Book a Free Demo or 20 Min Discovery Call for GWG Yoga Program.",
-      type: "Free Call & Demo",
+      description: "Book a Free Demo Session & consultation for GWG Yoga Program.",
+      type: "Free Demo Batch",
       duration: "20 Minutes",
       icon: Clock
     },
     "demo-online-hybrid": {
       title: "Free Demo: Online Hybrid Sessions",
       price: "Free",
-      description: "Book a Free Demo or 20 Min Discovery Call for Online Hybrid Sessions.",
-      type: "Free Call & Demo",
+      description: "Book a Free Demo Session & consultation for Online Hybrid Sessions.",
+      type: "Free Demo Batch",
       duration: "20 Minutes",
       icon: Clock
     },
     "demo-anti-aging": {
       title: "Free Demo: GWG Anti-Aging Offer",
       price: "Free",
-      description: "Book a Free Demo or 20 Min Discovery Call for GWG Anti-Aging Offer.",
-      type: "Free Call & Demo",
+      description: "Book a Free Demo Session & consultation for GWG Anti-Aging Offer.",
+      type: "Free Demo Batch",
       duration: "20 Minutes",
       icon: Clock
     },
     "demo-meal-plan": {
       title: "Free Demo: Complete Transformation Plan",
       price: "Free",
-      description: "Book a Free Demo or 20 Min Discovery Call for Complete Transformation Plan.",
-      type: "Free Call & Demo",
+      description: "Book a Free Demo Session & consultation for Complete Transformation Plan.",
+      type: "Free Demo Batch",
       duration: "20 Minutes",
       icon: Clock
     },
     "demo-hair-solution": {
       title: "Free Demo: Complete Hair Solution",
       price: "Free",
-      description: "Book a Free Demo or 20 Min Discovery Call for Complete Hair Solution.",
-      type: "Free Call & Demo",
+      description: "Book a Free Demo Session & consultation for Complete Hair Solution.",
+      type: "Free Demo Batch",
       duration: "20 Minutes",
       icon: Clock
     },
     "discovery-20": {
-      title: "Free 20 Min Discovery Call & Demo Session",
+      title: "Free 20 Min Demo Session & Consultation",
       price: "Free",
-      description: "Interactive 20 minutes call including a live fitness and yoga demo.",
-      type: "Free Call",
+      description: "Interactive 20 minutes session including a live fitness and yoga demo.",
+      type: "Free Session",
       duration: "20 Minutes",
       icon: Clock
     },
     "discovery-45": {
-      title: "Discovery Call for 45 mins",
+      title: "Demo & Consultation for 45 mins",
       price: "Pricing on Call",
       description: "Personalized guidance, hormone balancing insights, and root cause analysis.",
       type: "1 on 1 Call",
@@ -93,7 +93,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
       icon: Clock
     },
     "discovery-30": {
-      title: "Discovery Call for 30 mins",
+      title: "Demo & Consultation for 30 mins",
       price: "Pricing on Call",
       description: "Interactive session for beginners/intermediates to improve their wellness journey.",
       type: "1 on 1 Call",
@@ -247,7 +247,7 @@ export default function BookingModal({ isOpen, onClose, initialSelectedOption = 
 
   const getSubmitButtonText = () => {
     if (formData.selectedListing === "discovery-20" || formData.selectedListing.startsWith("demo-")) {
-      return "Book Free Demo / Discovery Call";
+      return "Book Free Demo Session";
     }
     return "Get 1-on-1 Session";
   };

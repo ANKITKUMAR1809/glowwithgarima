@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import BookingModal from "../../components/BookingModal";
 import { useCurrency } from "../../context/CurrencyContext";
+import BeforeAfterSlider from "../../components/BeforeAfterSlider";
 
 const programData = {
   "gwg-yoga-program": {
@@ -142,7 +143,7 @@ const programData = {
         desc: "Includes customized morning/night drinks, supplements, skin care products, and face yoga."
       }
     ],
-    image: "/headerImage.avif"
+    image: "/face_yoga_hero.png"
   },
   "complete-transformation-plan": {
     title: "Complete Transformation Plan",
@@ -214,6 +215,237 @@ const programData = {
   }
 };
 
+const faceTestimonials = [
+  "/testimonials/t7face.jpeg",
+  "/testimonials/t8face.jpeg",
+  "/testimonials/t9face.jpeg",
+  "/testimonials/t10face.jpeg",
+  "/testimonials/t11face.jpeg",
+  "/testimonials/t12face.jpeg",
+  "/testimonials/t13face.jpeg"
+];
+
+const bodyTestimonials = [
+  "/testimonials/t1.jpeg",
+  "/testimonials/t2.jpeg",
+  "/testimonials/t3.jpeg",
+  "/testimonials/t4.jpeg",
+  "/testimonials/t5.jpeg",
+  "/testimonials/t6.jpeg"
+];
+
+function TestimonialTicker({ images }) {
+  return (
+    <div className="relative w-full overflow-hidden py-8 select-none">
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes marquee-horizontal {
+          0% { transform: translate3d(0, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
+        }
+        .animate-marquee-testimonials {
+          display: flex;
+          width: max-content;
+          animation: marquee-horizontal 45s linear infinite;
+        }
+        .animate-marquee-testimonials:hover {
+          animation-play-state: paused;
+        }
+      `}} />
+      
+      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#FAF8F5] to-transparent z-10 pointer-events-none" />
+
+      <div className="w-full overflow-hidden">
+        <div className="animate-marquee-testimonials gap-6">
+          {images.map((src, idx) => (
+            <div key={`loop1-${idx}`} className="relative w-64 h-80 md:w-72 md:h-96 rounded-[2rem] overflow-hidden shadow-premium border-4 border-white bg-white shrink-0 hover:scale-[1.02] transition-transform duration-300">
+              <Image
+                src={src}
+                alt={`Testimonial ${idx + 1}`}
+                fill
+                sizes="(max-w-768px) 250px, 300px"
+                className="object-cover pointer-events-none select-none"
+              />
+            </div>
+          ))}
+          {images.map((src, idx) => (
+            <div key={`loop2-${idx}`} className="relative w-64 h-80 md:w-72 md:h-96 rounded-[2rem] overflow-hidden shadow-premium border-4 border-white bg-white shrink-0 hover:scale-[1.02] transition-transform duration-300">
+              <Image
+                src={src}
+                alt={`Testimonial duplicate ${idx + 1}`}
+                fill
+                sizes="(max-w-768px) 250px, 300px"
+                className="object-cover pointer-events-none select-none"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function InlineLeadForm({ program, defaultListing, formatPrice }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    age: "",
+    weight: "",
+    selectedOption: defaultListing || (program.pricingTiers[0] ? program.pricingTiers[0].priceId : "")
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const validate = () => {
+    let newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^\+?[0-9]{10,14}$/.test(formData.phone.replace(/[\s-]/g, ""))) {
+      newErrors.phone = "Enter a valid phone number";
+    }
+    if (!formData.age.trim()) newErrors.age = "Age is required";
+    if (!formData.weight.trim()) newErrors.weight = "Weight is required";
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const tier = program.pricingTiers.find(t => t.priceId === formData.selectedOption);
+    const optionTitle = tier ? tier.name : program.title;
+    const optionPrice = tier && tier.isOneMonth ? formatPrice(tier.priceId) : "Pricing on Call";
+    
+    const text = `Hello Garima Tiwari,\n\nI want to book/enquire about: *${optionTitle}* (${optionPrice})\n\nHere are my details:\n• *Name:* ${formData.name}\n• *Phone:* ${formData.phone}\n• *Age:* ${formData.age}\n• *Weight:* ${formData.weight}\n\nPlease confirm my details. Thank you!`;
+    
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=916393079027&text=${encodedText}`;
+    
+    setIsSubmitted(true);
+    window.open(whatsappUrl, "_blank");
+  };
+
+  return (
+    <div id="inline-lead-form" className="bg-[#FAF8F5]/80 backdrop-blur-md border border-pink-100 rounded-[2.5rem] p-6 md:p-8 shadow-premium space-y-5 relative overflow-hidden">
+      <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-xl pointer-events-none" />
+      <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/5 rounded-full blur-xl pointer-events-none" />
+
+      {isSubmitted ? (
+        <div className="text-center py-6 space-y-4 animate-fade-in relative z-10">
+          <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-800">
+            <CheckCircle2 className="w-6 h-6" />
+          </div>
+          <h4 className="text-lg font-bold text-primary font-display">
+            Request Submitted!
+          </h4>
+          <p className="text-xs text-text-muted max-w-xs mx-auto leading-relaxed font-semibold">
+            We are redirecting you to WhatsApp to complete your slot booking. If it didn't open, check your browser block settings.
+          </p>
+          <div className="pt-2">
+            <button
+              onClick={() => setIsSubmitted(false)}
+              className="text-xs text-primary hover:underline font-bold"
+            >
+              Submit another response
+            </button>
+          </div>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4 relative z-10">
+          <div className="text-center space-y-1">
+            <span className="text-[9px] font-extrabold uppercase tracking-widest text-secondary block">
+              Free Live Demo Batch
+            </span>
+            <h3 className="text-xl font-extrabold font-display text-primary leading-tight">
+              Claim Your Free Demo Slot
+            </h3>
+            <p className="text-[11px] text-text-muted font-semibold">
+              Fill out this profile to claim your free live demo and consultation directly on WhatsApp.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <div>
+              <input
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className={`w-full px-4 py-3 rounded-xl border bg-white/90 text-xs font-semibold transition-all ${errors.name ? "border-red-500 bg-red-50/10 focus:ring-1 focus:ring-red-500" : "border-pink-100 focus:border-primary focus:ring-1 focus:ring-primary"} focus:outline-none`}
+                placeholder="Full Name *"
+              />
+              {errors.name && <p className="text-[10px] text-red-500 mt-1">{errors.name}</p>}
+            </div>
+
+            <div>
+              <input
+                type="tel"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                className={`w-full px-4 py-3 rounded-xl border bg-white/90 text-xs font-semibold transition-all ${errors.phone ? "border-red-500 bg-red-50/10 focus:ring-1 focus:ring-red-500" : "border-pink-100 focus:border-primary focus:ring-1 focus:ring-primary"} focus:outline-none`}
+                placeholder="WhatsApp Phone Number *"
+              />
+              {errors.phone && <p className="text-[10px] text-red-500 mt-1">{errors.phone}</p>}
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <input
+                  type="number"
+                  value={formData.age}
+                  onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+                  className={`w-full px-4 py-3 rounded-xl border bg-white/90 text-xs font-semibold transition-all ${errors.age ? "border-red-500 bg-red-50/10 focus:ring-1 focus:ring-red-500" : "border-pink-100 focus:border-primary focus:ring-1 focus:ring-primary"} focus:outline-none`}
+                  placeholder="Age *"
+                />
+                {errors.age && <p className="text-[10px] text-red-500 mt-1">{errors.age}</p>}
+              </div>
+              <div>
+                <input
+                  type="text"
+                  value={formData.weight}
+                  onChange={(e) => setFormData({ ...formData, weight: e.target.value })}
+                  className={`w-full px-4 py-3 rounded-xl border bg-white/90 text-xs font-semibold transition-all ${errors.weight ? "border-red-500 bg-red-50/10 focus:ring-1 focus:ring-red-500" : "border-pink-100 focus:border-primary focus:ring-1 focus:ring-primary"} focus:outline-none`}
+                  placeholder="Weight (kg) *"
+                />
+                {errors.weight && <p className="text-[10px] text-red-500 mt-1">{errors.weight}</p>}
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-[10px] font-bold text-text-muted mb-1 uppercase tracking-wider">Select Option:</label>
+              <select
+                value={formData.selectedOption}
+                onChange={(e) => setFormData({ ...formData, selectedOption: e.target.value })}
+                className="w-full px-4 py-3 rounded-xl border border-pink-100 bg-white/90 focus:border-primary focus:outline-none text-xs font-semibold transition-colors cursor-pointer"
+              >
+                {program.pricingTiers.map((tier) => (
+                  <option key={tier.priceId} value={tier.priceId}>
+                    {tier.name} {tier.isOneMonth ? `(${formatPrice(tier.priceId)})` : "(Pricing on Call)"}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer shadow-premium hover:shadow-primary/25 transition-all flex items-center justify-center gap-1.5 mt-6 btn-shine-container relative overflow-hidden"
+          >
+            <span>Apply Now & Chat on WhatsApp</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+          
+          <p className="text-[9px] text-center text-text-muted font-bold leading-relaxed">
+            🌸 Exclusively for females. Live interactive batches.
+          </p>
+        </form>
+      )}
+    </div>
+  );
+}
+
 export default function ProgramPage({ params }) {
   const unwrappedParams = use(params);
   const id = unwrappedParams.id;
@@ -250,22 +482,36 @@ export default function ProgramPage({ params }) {
         </div>
 
         {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Hero Content */}
-          <div className="lg:col-span-7 space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start relative">
+          {/* Hero Content (Left side, takes 7 columns on desktop) */}
+          <div className="lg:col-span-7 space-y-8">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-pink-50 text-primary text-xs font-bold uppercase tracking-wider border border-pink-100/60">
               <Sparkles className="w-3.5 h-3.5 fill-current" />
               {program.category}
             </span>
-            <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-primary leading-tight">
-              {program.title}
-            </h1>
-            <p className="text-lg font-display font-bold text-secondary italic">
-              &ldquo;{program.tagline}&rdquo;
-            </p>
-            <p className="text-base text-text-muted leading-relaxed font-semibold">
-              {program.description}
-            </p>
+            <div className="space-y-3">
+              <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-primary leading-tight">
+                {program.title}
+              </h1>
+              <p className="text-lg font-display font-bold text-secondary italic">
+                &ldquo;{program.tagline}&rdquo;
+              </p>
+              <p className="text-base text-text-muted leading-relaxed font-semibold">
+                {program.description}
+              </p>
+            </div>
+
+            {/* Premium Program Featured Image Banner */}
+            <div className="relative w-full aspect-[16/10] rounded-[2.5rem] shadow-premium border-4 border-white bg-white overflow-hidden">
+              <Image
+                src={program.image}
+                alt={program.title}
+                fill
+                priority
+                sizes="(max-w-768px) 100vw, 700px"
+                className="object-cover"
+              />
+            </div>
 
             {/* Target Badges */}
             <div className="space-y-2 pt-2">
@@ -298,26 +544,41 @@ export default function ProgramPage({ params }) {
                 className="px-8 py-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl text-sm transition-all shadow-premium hover:shadow-primary/25 cursor-pointer flex items-center justify-center gap-2 group btn-shine-container relative overflow-hidden"
               >
                 <div className="btn-shine-overlay" />
-                <span>Book 20 Min Discovery Call</span>
+                <span>Book Free Demo Session</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               
+              <a
+                href="#inline-lead-form"
+                className="px-8 py-4 bg-secondary hover:bg-secondary-dark text-white font-bold rounded-2xl text-sm transition-all shadow-premium flex items-center justify-center gap-2"
+              >
+                <span>Apply for Free Demo</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
-          {/* Hero Image / Card */}
-          <div className="lg:col-span-5 relative flex justify-center">
-            <div className="relative w-full max-w-sm aspect-[4/5] rounded-[2.5rem] shadow-premium border-4 border-white bg-white overflow-hidden">
-              <Image
-                src={program.image}
-                alt={program.title}
-                fill
-                priority
-                sizes="(max-w-768px) 100vw, 400px"
-                className="object-cover"
-              />
-            </div>
+          {/* Sticky Inline Lead Form (Right side, takes 5 columns on desktop) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-6 lg:self-start">
+            <InlineLeadForm program={program} defaultListing={program.defaultListing} formatPrice={formatPrice} />
           </div>
+        </div>
+
+        {/* Results & Testimonials Auto-Scrolling Ticker */}
+        <div className="space-y-6 pt-4 border-t border-pink-100/30">
+          <div className="text-center max-w-xl mx-auto space-y-2">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-pink-50 text-secondary text-[10px] font-extrabold uppercase tracking-wider border border-pink-100/50">
+              <Sparkles className="w-3 h-3 fill-current" />
+              Real Client Transformations
+            </span>
+            <h2 className="font-display font-extrabold text-3xl text-primary leading-tight">
+              Our Success Stories & Results
+            </h2>
+            <p className="text-xs text-text-muted font-bold">
+              Real results of our active clients. Hover to pause the scrolling.
+            </p>
+          </div>
+          <TestimonialTicker images={id === "gwg-anti-aging-offer" ? faceTestimonials : bodyTestimonials} />
         </div>
 
         {/* Dynamic Payment Banner (Crucial Requirement!) */}
