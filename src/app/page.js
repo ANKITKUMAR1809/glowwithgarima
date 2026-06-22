@@ -238,45 +238,56 @@ export default function Home() {
       </section>
 
       {/* Brand Affiliation Section */}
-      <section className="max-w-7xl mx-auto px-6 py-8 relative z-10">
-        <div className="bg-white/40 backdrop-blur-md border border-pink-100/20 rounded-[2.5rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 shadow-sm">
-          <div className="space-y-1.5 text-center md:text-left md:max-w-md">
-            <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary block">
-              Collaborations
+      <section className="max-w-7xl mx-auto px-6 py-10 relative z-10">
+        <div className="bg-gradient-to-r from-white/60 via-pink-50/20 to-white/60 backdrop-blur-md border border-pink-100/30 rounded-[3rem] p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-10 md:gap-16 shadow-premium relative overflow-hidden">
+          {/* Subtle background decorative glow circles */}
+          <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-secondary/5 rounded-full blur-2xl pointer-events-none" />
+
+          {/* Heading content */}
+          <div className="space-y-3 text-center lg:text-left lg:max-w-md relative z-10">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 border border-pink-100 text-primary text-[10px] font-extrabold uppercase tracking-widest">
+              ⚡ Brand Affiliation
             </span>
-            <h3 className="font-display font-extrabold text-lg text-primary">
-              Associated Brands & Affiliations
+            <h3 className="font-display font-extrabold text-2xl md:text-3xl text-primary leading-tight">
+              Official Brand Affiliation
             </h3>
-            <p className="text-[11px] text-text-muted font-semibold leading-relaxed">
-              Partnering with premium health, wellness, and lifestyle brands to offer you the best solutions.
+            <p className="text-xs md:text-sm text-text-muted font-semibold leading-relaxed">
+              We officially collaborate with premium wellness and fitness brands, ensuring access to elite-grade products and natural health practices.
             </p>
           </div>
           
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            <motion.div 
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="relative w-44 h-20 transition-all duration-300 flex items-center justify-center bg-white/60 backdrop-blur-sm border border-pink-50/80 rounded-2xl p-4 shadow-sm hover:shadow-md cursor-pointer"
-            >
-              <Image 
-                src="/affiliation/brand1.avif" 
-                alt="Affiliated Brand 1" 
-                width={176}
-                height={80}
-                className="object-contain max-h-full" 
-              />
-            </motion.div>
-            <motion.div 
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="relative w-44 h-20 transition-all duration-300 flex items-center justify-center bg-white/60 backdrop-blur-sm border border-pink-50/80 rounded-2xl p-4 shadow-sm hover:shadow-md cursor-pointer"
-            >
-              <Image 
-                src="/affiliation/brand2.avif" 
-                alt="Affiliated Brand 2" 
-                width={176}
-                height={80}
-                className="object-contain max-h-full" 
-              />
-            </motion.div>
+          {/* Circular logo containers with premium micro-animations */}
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 relative z-10">
+            {[
+              { src: "/affiliation/brand1.avif", alt: "Affiliated Brand 1" },
+              { src: "/affiliation/brand2.avif", alt: "Affiliated Brand 2" }
+            ].map((brand, idx) => (
+              <div key={idx} className="relative group">
+                {/* Glowing pulsing aura behind logo circle on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full blur-md opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 -z-10 animate-pulse" />
+                
+                {/* Inner border spinner effect */}
+                <div className="absolute -inset-1 bg-gradient-to-tr from-primary via-transparent to-secondary rounded-full opacity-0 group-hover:opacity-100 animate-spin-slow transition-opacity duration-500" />
+
+                {/* Circular main container */}
+                <motion.div 
+                  whileHover={{ scale: 1.08, rotate: [0, 2, -2, 0] }}
+                  transition={{ duration: 0.4 }}
+                  className="relative w-36 h-36 md:w-44 md:h-44 rounded-full flex items-center justify-center bg-white border-[3px] border-white shadow-xl hover:shadow-2xl cursor-pointer p-4 overflow-hidden z-10"
+                >
+                  <div className="relative w-full h-full rounded-full overflow-hidden flex items-center justify-center bg-zinc-50/50">
+                    <Image 
+                      src={brand.src} 
+                      alt={brand.alt} 
+                      fill
+                      sizes="(max-w-768px) 144px, 176px"
+                      className="object-contain p-2 transform group-hover:scale-105 transition-transform duration-500" 
+                    />
+                  </div>
+                </motion.div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
