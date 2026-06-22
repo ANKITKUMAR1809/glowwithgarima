@@ -211,7 +211,7 @@ const programData = {
         desc: "Comprehensive 9-session botanical care system with brand secret remedies."
       }
     ],
-    image: "/offering/of3.avif"
+    image: "/offering/hair_solution.png"
   }
 };
 

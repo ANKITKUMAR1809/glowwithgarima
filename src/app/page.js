@@ -237,6 +237,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Brand Affiliation Section */}
+      <section className="max-w-7xl mx-auto px-6 py-8 relative z-10">
+        <div className="bg-white/40 backdrop-blur-md border border-pink-100/20 rounded-[2.5rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 shadow-sm">
+          <div className="space-y-1.5 text-center md:text-left md:max-w-md">
+            <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary block">
+              Collaborations
+            </span>
+            <h3 className="font-display font-extrabold text-lg text-primary">
+              Associated Brands & Affiliations
+            </h3>
+            <p className="text-[11px] text-text-muted font-semibold leading-relaxed">
+              Partnering with premium health, wellness, and lifestyle brands to offer you the best solutions.
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="relative w-44 h-20 transition-all duration-300 flex items-center justify-center bg-white/60 backdrop-blur-sm border border-pink-50/80 rounded-2xl p-4 shadow-sm hover:shadow-md cursor-pointer"
+            >
+              <Image 
+                src="/affiliation/brand1.avif" 
+                alt="Affiliated Brand 1" 
+                width={176}
+                height={80}
+                className="object-contain max-h-full" 
+              />
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="relative w-44 h-20 transition-all duration-300 flex items-center justify-center bg-white/60 backdrop-blur-sm border border-pink-50/80 rounded-2xl p-4 shadow-sm hover:shadow-md cursor-pointer"
+            >
+              <Image 
+                src="/affiliation/brand2.avif" 
+                alt="Affiliated Brand 2" 
+                width={176}
+                height={80}
+                className="object-contain max-h-full" 
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Accredited Credentials & Certifications Section */}
       <section className="max-w-7xl mx-auto px-6 py-12 md:py-16 relative border-t border-pink-50/50">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
